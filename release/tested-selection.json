@@ -1,0 +1,39 @@
+[
+  {
+    "id": "etahen",
+    "label": "etaHEN ShellUI trace diagnostic",
+    "bytes": 30415360,
+    "sha256": "9712340a3e4e49f2acfe5fb9e6d3872490dbed0e00f3355d395e32ffe9575ab7",
+    "input": "etahen-13.60/build/shellui-trace/etaHEN-13.60-toolbox-diagnostic.elf",
+    "acknowledgement": "etahen",
+    "file": "payload-01.elf"
+  },
+  {
+    "id": "etahen-ready",
+    "label": "etaHEN readiness",
+    "file": "payload-02.elf",
+    "bytes": 83512,
+    "sha256": "d04800752e0259ab8eaca71282473e89914f67b6da59c995b9a2efb34a5b781a",
+    "input": "relapse-host/artifacts/youtube-installer/Snipers-EtaHEN-Ready.elf",
+    "acknowledgement": "supervisor",
+    "internal": true
+  },
+  {
+    "id": "shadowmount",
+    "label": "ShadowMountPlus",
+    "bytes": 2658120,
+    "sha256": "27ff1d6c01ed3f19cbd9845f8fe0c591ce8b8f32f7003a1e3481924d6b8b50b5",
+    "input": "relapse-host\\artifacts\\y2jb-candidates\\optional-shadowmount.elf",
+    "acknowledgement": "supervisor",
+    "file": "payload-03.elf"
+  },
+  {
+    "id": "debug",
+    "label": "PS5Debug-NG",
+    "bytes": 4280080,
+    "sha256": "04383e969a5436c9655d80a936dce28d5ac2c2f9d5fd6b98e27e90e6dc624bd6",
+    "input": "relapse-host\\site\\payloads\\optional-debug-04383e969a54.elf",
+    "acknowledgement": "supervisor",
+    "file": "payload-04.elf"
+  }
+]

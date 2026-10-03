@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-03",
+  "firmware": "13.60",
+  "youtubeTitleId": "PPSA01650",
+  "youtubeVersion": "01.000.030",
+  "consecutiveSuccessfulRuns": 10,
+  "consoleCount": 1,
+  "evidence": "Maintainer reported ten consecutive successful reboot-and-jailbreak tests",
+  "displayTitleIds": false,
+  "dashboardWaitSeconds": 5,
+  "etaHenVariant": "ShellUI trace diagnostic",
+  "rootCauseFixConfirmed": false,
+  "imageSha256": "00eeb50d3dc1ca2c3f56f3e4c5725c37327826a48b870b118e1aa9bb1575f790",
+  "nativePayloads": [
+    {
+      "id": "handoff-startup",
+      "label": "Independent selected-payload startup",
+      "file": "payload-01.elf",
+      "bytes": 37520960,
+      "sha256": "48f23e11eadc7f467b65e5c0c5123c70174f698cbaa66d28f2215e5bc3d27267",
+      "acknowledgement": "supervisor",
+      "crc32": "bc7e2ede"
+    }
+  ],
+  "earlierIntermittentFailures": true
+}
