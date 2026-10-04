@@ -4,8 +4,8 @@
     "label": "etaHEN experimental",
     "version": "2.5B · multi-firmware candidate",
     "bytes": 30515392,
-    "sha256": "2c86b23b20bed190a3107763b9faaac1bb1e1f9ecd8cd805e05d6438bfb8adac",
-    "input": "etahen-13.60/build/releases/etaHEN-2c86b23b20bed190a3107763b9faaac1bb1e1f9ecd8cd805e05d6438bfb8adac.elf",
+    "sha256": "55acdea2854b55b1b093da4bff938bf6cf9a0eaa3600f90a14301ff7451d997e",
+    "input": "etahen-13.60/build/releases/etaHEN-55acdea2854b55b1b093da4bff938bf6cf9a0eaa3600f90a14301ff7451d997e.elf",
     "acknowledgement": "etahen",
     "description": "Community test build with exact firmware profiles. Hardware behavior is not yet validated on these versions."
   },
