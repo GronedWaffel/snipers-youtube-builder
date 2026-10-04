@@ -1,3 +1,7 @@
+<!-- snipers-experimental-release -->
+**Experimental multi-firmware downloads:** [Open the release with ELF / Windows assets](https://github.com/GronedWaffel/snipers-youtube-builder/releases/tag/experimental-multifw-v1.1). Targets 33 exact firmware versions from 7.00 through 13.60; 9.05 and 11.40 excluded. Community testing is still required. Stable 13.60 remains separate. [Experimental builder](https://sniperscheats.lol/builder/ex/) · [Experimental payloads](https://sniperscheats.lol/payloads/ex/).
+<!-- /snipers-experimental-release -->
+
 # Snipers YouTube Builder
 
 Build your own automatic YouTube homebrew startup for **PS5 firmware 13.60**. Choose hosted payloads or upload your own ELF files, install the selected bundle from the PS5 browser, then open YouTube after a reboot.
