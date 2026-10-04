@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Website-hosted native PS5 payload. Fixed YouTube destination; pinned download.
 #define SNIPERS_INSTALLER
+static void progress(const char *message);
 #include "youtube-preflight.c"
 #include <sys/socket.h>
 #include <sys/file.h>
@@ -24,8 +25,8 @@ static const char *target="/user/download/PPSA01650/download0.dat";
 static unsigned char buffer[65536];
 static int log_fd=-1;
 static void saved(const char *text){if(log_fd<0)return;size_t remaining=strlen(text);while(remaining){ssize_t n=write(log_fd,text,remaining);if(n<0&&errno==EINTR)continue;if(n<=0)break;text+=n;remaining-=(size_t)n;}}
-static void progress(const char *message){char line[512];snprintf(line,sizeof line,"SNPR_OPTION_PROGRESS=%s\n",message);fputs(line,stdout);fflush(stdout);saved(line);}
-static int result(int code,const char *message){char line[640];snprintf(line,sizeof line,"SNPR_OPTION_MESSAGE=%s\nSNPR_OPTION_RESULT=%d\n",message,code);fputs(line,stdout);fflush(stdout);saved(line);if(log_fd>=0){fsync(log_fd);close(log_fd);log_fd=-1;}return code<0?1:0;}
+#include "installer-status.h"
+static const char *download_failure="Download or checksum verification failed. Existing YouTube startup preserved.";
 static int safe_text(const char *s,size_t cap,int path){
  size_t n=strnlen(s,cap);if(!n||n==cap)return 0;
  for(size_t i=0;i<n;i++)if(!((s[i]>='a'&&s[i]<='z')||(s[i]>='A'&&s[i]<='Z')||(s[i]>='0'&&s[i]<='9')||s[i]=='.'||s[i]=='-'||(path&&(s[i]=='/'||s[i]=='_'))))return 0;
@@ -60,7 +61,10 @@ static int download(const struct installer_config *c,int out){
  size_t used=0;time_t deadline=time(NULL)+600;
  while(used+1<sizeof header){if(time(NULL)>deadline||read(sock,header+used,1)!=1){close(sock);return -1;}used++;if(used>=4&&!memcmp(header+used-4,"\r\n\r\n",4))break;}
  header[used]=0;
- if(used+1==sizeof header||strncmp(header,"HTTP/1.1 200 ",13)&&strncmp(header,"HTTP/1.0 200 ",13)){close(sock);return -1;}
+ if(used+1==sizeof header||strncmp(header,"HTTP/1.1 200 ",13)&&strncmp(header,"HTTP/1.0 200 ",13)){
+  if(used>=12&&(!strncmp(header+9,"404",3)||!strncmp(header+9,"410",3)))download_failure="This build expired or is no longer available. Build a new bundle on the website and download its new installer ELF.";
+  close(sock);return -1;
+ }
  uint64_t length=0;int lengths=0;char *line=strstr(header,"\r\n");
  while(line&&line[2]){line+=2;char *end=strstr(line,"\r\n");if(!end)break;*end=0;
   if(!strncasecmp(line,"Content-Length:",15)){char *p=line+15;while(*p==' '||*p=='\t')p++;if(!*p){close(sock);return -1;}
@@ -80,7 +84,8 @@ static int download(const struct installer_config *c,int out){
 }
 #include "youtube-base.h"
 int main(void){
- setvbuf(stdout,NULL,_IONBF,0);signal(SIGPIPE,SIG_IGN);
+ signal(SIGPIPE,SIG_IGN);setvbuf(stdout,NULL,_IONBF,0);
+ progress("Installer started. Keep YouTube closed while setup runs.");
  struct installer_config c;memcpy(&c,(const void*)&config,sizeof c);
  if((c.mode!=1&&c.mode!=2)||c.bytes!=336789504ULL||!c.address||!c.port||!safe_text(c.host,sizeof c.host,0)||!safe_text(c.path,sizeof c.path,1)||c.path[0]!='/'||strnlen(c.job,sizeof c.job)!=32)
   return result(-20,"Installer is not configured for a verified build.");
@@ -88,8 +93,9 @@ int main(void){
  char logpath[160];snprintf(logpath,sizeof logpath,"/data/snipers-youtube-installer-%s.log",c.job);
  log_fd=open(logpath,O_WRONLY|O_CREAT|O_APPEND|O_NOFOLLOW,0600);
  if(log_fd>=0){struct stat logstat;if(fstat(log_fd,&logstat)||!S_ISREG(logstat.st_mode)||logstat.st_nlink!=1||logstat.st_size>65536){close(log_fd);log_fd=-1;}}
- if(ensure_youtube_installed(c.mode==2)<0)return result(-27,"YouTube setup needs attention; see the message above. The startup image was not replaced.");
- progress("Checking YouTube before downloading.");if(youtube_preflight()<0)return result(-21,"Preflight blocked startup installation; see the check above. The startup image was not replaced.");
+ progress("Checking this build and YouTube installation.");
+ if(ensure_youtube_installed(c.mode==2)<0)return result(-27,last_progress);
+ progress("Checking YouTube before downloading.");if(youtube_preflight()<0)return result(-21,last_progress);
  struct stat directory;
  if(lstat(root,&directory)){
   if(errno!=ENOENT||c.mode!=2||mkdir(root,0777)||lstat(root,&directory))return result(-22,"YouTube download directory is unavailable.");
@@ -115,7 +121,7 @@ int main(void){
   if(errno!=ENOENT)goto done;
  }
  output=open(staged,O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW,0600);if(output<0){message="This build has a staged file from an earlier attempt. It was preserved; no automatic retry.";goto done;}
- progress("Downloading the selected startup image.");if(download(&c,output)){message="Download or checksum verification failed. Existing YouTube startup preserved.";goto done;}
+ progress("Downloading the selected startup image.");if(download(&c,output)){message=download_failure;goto done;}
  if(fchown(output,exists?old.st_uid:directory.st_uid,exists?old.st_gid:directory.st_gid)||fchmod(output,exists?(old.st_mode&0777):0644)||fsync(output))goto done;
  if(close(output)){output=-1;goto done;}output=-1;
  progress("Verifying the complete staged file from storage.");
