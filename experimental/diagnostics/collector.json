@@ -2,6 +2,6 @@
   "schema": 1,
   "url": "/diagnostics/collector.elf",
   "bytes": 83504,
-  "sha256": "5cd65c46425aa56b244b81f9c7e691a5f26f56616cb79152c146087eb3c9a40c",
+  "sha256": "dbb2b04606b03ea6db39112e3b6c0c76cf5c4f85974ece1f1d3b807c4853aa84",
   "readOnly": true
 }

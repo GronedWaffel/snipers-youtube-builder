@@ -3,8 +3,8 @@ export const FILES=[
  'etaHEN/experimental-diagnostics/trace.log.3','etaHEN/experimental-diagnostics/trace.log.2',
  'etaHEN/experimental-diagnostics/trace.log.1','etaHEN/experimental-diagnostics/trace.log',
  'etaHEN/bootstrap-experimental.previous.log','etaHEN/bootstrap-experimental.log',
- 'etaHEN/etaHEN.previous.log','etaHEN/etaHEN.log','etaHEN/etaHEN_util_daemon.previous.log','etaHEN/etaHEN_util_daemon.log',
- 'etaHEN/etaHEN_crash.previous.log','etaHEN/etaHEN_crash.log','etaHEN/etaHEN_util_crash.previous.log','etaHEN/etaHEN_util_crash.log',
+ 'etaHEN/experimental-daemon.previous.log','etaHEN/experimental-daemon.log','etaHEN/experimental-utility.previous.log','etaHEN/experimental-utility.log',
+ 'etaHEN/experimental-daemon-crash.previous.log','etaHEN/experimental-daemon-crash.log','etaHEN/experimental-utility-crash.previous.log','etaHEN/experimental-utility-crash.log',
  'snipers-youtube-handoff-startup.log'];
 export function collectorParser(){
  let current=null,report=null;const seen=new Set();let total=0;
