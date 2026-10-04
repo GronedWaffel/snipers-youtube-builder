@@ -1,3 +1,7 @@
+# Experimental channel
+
+Use [experimental/README.md](experimental/README.md) for this branch. All 33 candidates passed local integration, not hardware validation. The instructions and results below describe the historical stable 13.60 build.
+
 # Validation record
 
 ## Console result reported October 3, 2026

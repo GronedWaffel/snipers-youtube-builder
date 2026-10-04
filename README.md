@@ -1,28 +1,13 @@
-# Snipers YouTube Builder
+# Snipers YouTube Builder - experimental multi-firmware
 
-Build your own automatic YouTube homebrew startup for **PS5 firmware 13.60**. Choose hosted payloads or upload your own ELF files, install the selected bundle from the PS5 browser, then open YouTube after a reboot.
+Create a YouTube startup bundle for 33 exact PS5 firmware targets from 7.00 through 13.60. **9.05 and 11.40 are excluded.** Choose hosted payloads or your own ELF files directly on PS5, or optionally from a phone/computer.
 
-**[Open the builder](https://sniperscheats.lol/builder/)** · [Build instructions](BUILDING.md) · [Credits](CREDITS.md) · [Test results](TESTING.md)
+[Open the experimental builder](https://sniperscheats.lol/builder/ex/) | [Stable 13.60 builder](https://sniperscheats.lol/builder/) | [Build and validation details](experimental/README.md) | [Credits](CREDITS.md)
 
-A phone or PC is optional for choosing payloads. Installation runs on the PS5 with an existing jailbreak and etaHEN active. When the supported YouTube app is missing, the installer can request its installation through etaHEN DPI v2. Supported application: **PPSA01650, version 01.000.030**. Follow the website's network/DNS instructions.
+This branch and its prereleases are separate from the stable 13.60 release. Every target passed local image and installer integration checks; **this experimental binary has not been validated on consoles across these firmwares**. Community reports should include firmware, selected payloads, the stage that failed and relevant logs with private data removed.
 
-After the kernel stage completes and cleans up, an independent native loader owns the selected payloads, closes YouTube, waits for its mounts to release, and gives the dashboard five seconds before starting etaHEN. The recommended chain waits for etaHEN Toolbox and kstuff readiness, then starts ShadowMountPlus and PS5Debug-NG. Failed startup stages stop the sequence rather than repeatedly injecting payloads.
+The native handoff owns the payloads before closing YouTube, retains the five-second dashboard wait, and waits for etaHEN/kstuff readiness before subsequent payloads. Installation needs an existing jailbreak and etaHEN. The installer chooses the matching YouTube package, verifies it and the startup image, and can reconcile a lost DPI reply against actual installation completion.
 
-## Tested configuration
+Source layout: `relapse-host` contains the builder, installer and payload supervisors; `relapse-y2jb` contains Y2JB/Relapse integration and UFS2 tools; `etahen-13.60` retains its historical directory name but contains the experimental multi-firmware source. `experimental` holds exact profiles, pinned research, build scripts, local integration results and isolated deployment examples.
 
-On October 3, 2026, the maintainer reported **10 consecutive successful reboot-and-jailbreak runs on one PS5** using the ShellUI trace build, etaHEN, ShadowMountPlus, and PS5Debug-NG, with Display title IDs disabled. The exact payload and image hashes are recorded in [release/test-results.json](release/test-results.json).
-
-This is an **experimental, unofficial integration**. Earlier testing encountered intermittent ShellUI/system-software errors, including one with title IDs disabled. The trace build adds diagnostics; a root-cause fix has not been established. Ten successful runs are the observed result, not a universal success-rate claim. Other payload combinations need their own testing.
-
-## Source layout
-
-- `relapse-host/builder`: website, selection service, native installer, readiness checks, and independent startup loader.
-- `relapse-y2jb`: edisnord's Relapse Y2JB port, host integration, pinned Y2JB inputs, and UFS2 image builder.
-- `etahen-13.60`: LightningMods' etaHEN with the unofficial 13.60 port and the diagnostic changes used in the ten-run test.
-- `relapse-host/optional` and `relapse-host/vendor`: payload supervisors, modified ShadowMountPlus, and supporting source.
-
-This release publishes source. SDKs, external build inputs, compiled payloads, and Sony application packages are not included. The public site's deployment is managed separately; the historical hosted catalog in this source pins etaHEN r3. Use `release/tested-selection.json` and the trace build instructions to reproduce the tested selection.
-
-## Credit and licensing
-
-The exploit, host, etaHEN, payloads, and toolchain are community work. Snipers contributes the builder, installation workflow, startup coordination, and documented integration changes. **Please retain the original authors' credits and licenses.** See [CREDITS.md](CREDITS.md) and [LICENSES.md](LICENSES.md).
+The original 13.60 ten-run test is historical and does not establish compatibility of this experimental release. See [stable history](release/STABLE-HISTORY.md). Existing component credits and licenses remain in [CREDITS.md](CREDITS.md) and [LICENSES.md](LICENSES.md). Snipers' integration builds on the original exploit, etaHEN, payload and toolchain authors' work.

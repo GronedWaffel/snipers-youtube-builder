@@ -1,3 +1,4 @@
+import {firmwareProfile,CHANNEL} from '../../../experimental/channel.mjs';
 import fs from 'node:fs/promises';import path from 'node:path';import {isToken} from './payloads.mjs';
 export async function saveJob(job){
  const tmp=path.join(job.directory,'state.json.new');
@@ -11,6 +12,7 @@ export async function restoreJobs(storage,ttl){
   try{
    const file=path.join(directory,'state.json'),stat=await fs.lstat(file);if(!stat.isFile()||stat.isSymbolicLink()||stat.size>65536)throw Error('Invalid saved state');
    const job=JSON.parse(await fs.readFile(file,'utf8'));
+   firmwareProfile(job.firmware);if(job.channel!==CHANNEL)throw Error('Wrong saved job channel');
    if(job.id!==entry.name||!isToken(job.key)||path.resolve(job.directory)!==directory||!Number.isFinite(job.expires)||!Array.isArray(job.files)||!Array.isArray(job.selection))throw Error('Invalid saved state');
    for(const target of [job.package,job.image,...job.files.map(f=>f.path)].filter(Boolean)){
     const relative=path.relative(directory,path.resolve(target));if(relative.startsWith('..')||path.isAbsolute(relative))throw Error('Saved path escaped build directory');

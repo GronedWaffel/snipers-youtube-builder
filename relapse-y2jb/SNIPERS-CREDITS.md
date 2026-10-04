@@ -38,5 +38,5 @@
 - Startup orchestration, Windows packaging and SHA-256 fallback: GronedWaffel
   project integration, MIT. Native payloads retain their separate licenses.
 
-This source snapshot is published by GronedWaffel. See the repository-root CREDITS.md and TESTING.md.
+This local candidate does not publish any repositories or release assets.
 No Sony application package, console credentials, saves or game content is included.

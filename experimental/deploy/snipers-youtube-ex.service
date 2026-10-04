@@ -1,0 +1,33 @@
+[Unit]
+Description=Snipers experimental firmware builder
+After=network.target
+
+[Service]
+Type=simple
+User=snipers-builder-ex
+Group=snipers-builder-ex
+WorkingDirectory=/opt/snipers-youtube-ex/current
+ExecStart=/usr/bin/node relapse-host/builder/server/start.mjs
+Environment=PORT=8789
+Environment=BUILDER_STORAGE=/var/lib/snipers-youtube-ex/jobs
+Environment=BUILDER_ORIGIN=https://sniperscheats.lol
+Environment=BUNDLE_ADDRESS=64.20.57.42
+Environment=BUNDLE_HOST=sniperscheats.lol
+Environment=SNIPERS_BUILDS=0
+Environment=SNIPERS_INSTALL_ENABLED=0
+Environment=SNIPERS_MAX_JOBS=20
+Environment=SNIPERS_BUILD_WORKERS=1
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/snipers-youtube-ex
+MemoryHigh=768M
+MemoryMax=1G
+CPUQuota=50%
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

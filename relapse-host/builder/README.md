@@ -54,7 +54,8 @@ Build directly in the PS5 browser; other devices and build codes are optional.
 With etaHEN DPI v2 enabled, a real installer can request the pinned YouTube app
 when it is missing, wait for its registered package and checksum, then install
 the startup bundle. It never silently replaces an unsupported installed version
-or resubmits an uncertain DPI request. Fresh-app installation was subsequently tested by the maintainer; see the repository-root TESTING.md for the scope.
+or resubmits an uncertain DPI request. Fresh-app installation requires its own
+hardware test; prior successful bundle tests used an already installed app.
 Keep YouTube closed and etaHEN active. On the next boot, YouTube performs the kernel chain and hands
 off to the native startup. The native process verifies its embedded payloads,
 closes YouTube, waits for its mounts to release, waits five seconds, then starts

@@ -25,6 +25,20 @@ ShadowMount refuses to launch if BackPork is found or process enumeration is inc
 
 ## Build
 
+Payload Manager startup integration (2026-10-03): the supervisor backs up an
+existing `pldmgr_config.txt` beside the original before atomically adapting its
+three competing startup options: `AUTOLOAD_ENABLED`, `AUTO_BROWSER_OPEN`, and
+`KILL_DISC_PLAYER_ON_STARTUP` become zero. Other settings and `autoload.txt` are
+preserved. A fresh configuration receives those same values. Backup, write or
+rename failure leaves the original in place and prevents launch. A normalized
+config is not rewritten on subsequent boots. Payload Manager itself remains the
+unmodified, hash-pinned itsPLK 0.5.2 release.
+
+The migrated configuration and exact backup were checked on PS5 13.60; the
+supervisor reported ready, `pldmgr.elf` remained running and HTTP 8084 served the
+Payload Manager interface alongside the other selected services. Fresh-boot
+verification of the updated bundle remains a separate hardware check.
+
 Use Node 24, Zig 0.14.1, PS5 payload SDK 0.43. Set `ZIG` and `PS5_PAYLOAD_SDK` for non-default paths. Download the exact ShadowMount ELF to `vendor/shadowmountplus-1.7beta2.elf`; set `PS5DEBUG_ELF` to the exact 1.3.2 ELF. The script refuses mismatched inputs.
 
     node scripts/build-optional.mjs

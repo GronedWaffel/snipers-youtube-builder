@@ -17,3 +17,9 @@ relapse-host/artifacts/youtube-installer/*
 *.zip
 .env
 .env.*
+/experimental/local/
+**/dependencies/
+*.sxml
+*.a
+*.so
+*.prx

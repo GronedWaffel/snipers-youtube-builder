@@ -24,8 +24,8 @@ window.firmware = {
       return "FW version not found";
     }
 
-    if (firmwareVersion !== "13.60") {
-      return `This etaHEN host requires PS5 13.60; detected ${firmwareVersion}`;
+    if (!supportedFirmware.includes(firmwareVersion)) {
+      return `No experimental firmware table for ${firmwareVersion}`;
     }
 
     return null;

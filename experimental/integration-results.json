@@ -1,0 +1,200 @@
+[
+  {
+    "firmware": "7.00",
+    "imageSha256": "c92094a82205cec5dc7874491fc63ca881d8a02bafb6ac528aca44b3c59bec0a",
+    "installerSha256": "b100142eee4bf93671c112cf4f5267398d1e50db51f87164cd3f7647bce0c57b",
+    "consoleTested": false
+  },
+  {
+    "firmware": "7.01",
+    "imageSha256": "c863a2a515f35089851ea51c7720ea770a3de6dfc1c47adc7d1341fbef0ecc9a",
+    "installerSha256": "254cf5d5d4bbe01292f8ff9e5ea55f2c5384708367e6359d15c3674308ce275d",
+    "consoleTested": false
+  },
+  {
+    "firmware": "7.20",
+    "imageSha256": "a1c5365c7afa24ebf7173851c6f676c5879b59d8a515f8bc2240aa1be83e9484",
+    "installerSha256": "78eedba41cc0b5b0220f3e8e05e28fbad7496db9ed5da1f7f904d25ef692d4d3",
+    "consoleTested": false
+  },
+  {
+    "firmware": "7.40",
+    "imageSha256": "eaad5cd45f6d8b8780cc613ae9fce3a9f843d3ea9b54bb18eb0514a831449ef8",
+    "installerSha256": "62a0aa0d5c06a4681cbde3cb985458d248e5c1d87985ba2166e2d13056716405",
+    "consoleTested": false
+  },
+  {
+    "firmware": "7.60",
+    "imageSha256": "4447dfe7764d7364b2fb30a577e232043a1e740de9bb796a256ba682483c9afd",
+    "installerSha256": "9fb8dbdc80196eeb5aa5eed374ff3115281cbb98dadf08660598962fba5afd88",
+    "consoleTested": false
+  },
+  {
+    "firmware": "7.61",
+    "imageSha256": "920268053dede964b588f471982f73868658b442721f62d8d6e4cd2d43032297",
+    "installerSha256": "da66f81f689e13c1dabbafc8e55e8ac2c25d731991a6e07514397043b248d0b2",
+    "consoleTested": false
+  },
+  {
+    "firmware": "8.00",
+    "imageSha256": "2a518dcbb0d5526c6581dc02ffbc362f68d2079cc78df9db127bf6575b3d2191",
+    "installerSha256": "e359fada774c22912a0e02449e400e902b51fe5d8672488896634739cac94d67",
+    "consoleTested": false
+  },
+  {
+    "firmware": "8.20",
+    "imageSha256": "70ee0044370273c0f01aaa8bc854af8a46fba5cfd7b39e2720c42bc2847b388c",
+    "installerSha256": "a9aee591d958cafdd668c48cda99e00071b3f7f331a48ee644fffd9915eb9149",
+    "consoleTested": false
+  },
+  {
+    "firmware": "8.40",
+    "imageSha256": "6b5662cdd3497799a7e9c55e5ea7c55b2e36d3701129282dd34e7b27fd1968df",
+    "installerSha256": "324da1e8218f16c2eb7d2ffde05dd625c226d4f539be629a7495450847add775",
+    "consoleTested": false
+  },
+  {
+    "firmware": "8.60",
+    "imageSha256": "15d72469146050bbedd10bdaf17eee182851983fc4e9f1c54f5dc2b71c3f00e9",
+    "installerSha256": "293a00167e094ff84eb24df9a06fbdb7323870ef2b8993b3d401114613f3f2b9",
+    "consoleTested": false
+  },
+  {
+    "firmware": "9.00",
+    "imageSha256": "26003f1c4059e8a40e7cdfb8e8c64521efee96e25c7b78ff8d6840e7179c93ca",
+    "installerSha256": "850f4c402b9085d239c6079ddfd78c439a0779ae01293c77266ad27a957073a7",
+    "consoleTested": false
+  },
+  {
+    "firmware": "9.20",
+    "imageSha256": "e9a4a37db3cabe51aef9c711769d2b684de2a8d3911d3f15a5852b64f4e4b819",
+    "installerSha256": "56f26047f9213d5c2b840760aeca997c02536281f173a527c6eef97db26658b8",
+    "consoleTested": false
+  },
+  {
+    "firmware": "9.40",
+    "imageSha256": "e15e496c520711ddd7a729afffe63c8539b6abb7c645e40fbbaa984e5237784c",
+    "installerSha256": "4b06fa853ec4dca486c53d0953d749b2f6627b4250ca450d87d1cd43df1ebb59",
+    "consoleTested": false
+  },
+  {
+    "firmware": "9.60",
+    "imageSha256": "3a23ec6a688ef25ae6f7fbf94277f1440190152b9890b26c75ea36756809237e",
+    "installerSha256": "d847a8a7e670e5bc057c2ac6fb5c0d63b772b34b96d1bc0e791d7ab528f14366",
+    "consoleTested": false
+  },
+  {
+    "firmware": "10.00",
+    "imageSha256": "69c55675145f3daa0dc92828350ee285258348d228453468a114bfcab8a9352d",
+    "installerSha256": "3d5661d4017255f3a46a0dea111becc907a1057b3e41f941f9a92430f02b387c",
+    "consoleTested": false
+  },
+  {
+    "firmware": "10.01",
+    "imageSha256": "0ecac85ed22296e6aa688f83c375e3a8e8fdf279180a6ba31da52b382df085a4",
+    "installerSha256": "8f32dabf3d62daf712ef9d752dd83cb9c44cc2664ac01a0c62ebb00737a5aa61",
+    "consoleTested": false
+  },
+  {
+    "firmware": "10.20",
+    "imageSha256": "422e143f8275f778f8c42e6cdcf4360d2596775b456a578a449209283a5855be",
+    "installerSha256": "8def290a01b24b86dc981db3f45b73773c9c3257d461611583e67447e9b41c89",
+    "consoleTested": false
+  },
+  {
+    "firmware": "10.40",
+    "imageSha256": "97aeae1d018e4039feae0f40955588a9139bd4e8356501d91ba8777a29559e78",
+    "installerSha256": "2bd5680484a81253c98260ec35a57c2587c3b028bb7dd6d17786b88a3f42df5b",
+    "consoleTested": false
+  },
+  {
+    "firmware": "10.60",
+    "imageSha256": "d1c8584364c0be785c41b8c0a628f9c73f4271ccad0719ad9386af6e8283e361",
+    "installerSha256": "16d8eb8c0e83eace683768c49459efa4ab3641751d363e6a9134028d5dda87ca",
+    "consoleTested": false
+  },
+  {
+    "firmware": "11.00",
+    "imageSha256": "4b1700868a97bd4f2e9fc6b1ca0485d0c91cae66b16ac196b6a714da6ad61b46",
+    "installerSha256": "00ecb18300e08a87c19724692fc2bd98a4edf19f46aab11a47b3b8f64be88229",
+    "consoleTested": false
+  },
+  {
+    "firmware": "11.20",
+    "imageSha256": "674f946b28c49aa946b1f7984ec31d92ad5e6c3a76424b6b5f073cacd4edbe1e",
+    "installerSha256": "8c9fc007a66cfeb6f6121ce7b3816afd6b25e047a10d2935cf93bff53c378399",
+    "consoleTested": false
+  },
+  {
+    "firmware": "11.60",
+    "imageSha256": "02e43dbff8ac5ca94276dd6a4a59c9620c5b4498983e787da14db387ab01f459",
+    "installerSha256": "143143d604dd398c956808b96a1abccb9b3554f6fc700a080dc7cda3dcecad60",
+    "consoleTested": false
+  },
+  {
+    "firmware": "12.00",
+    "imageSha256": "9c5ab75b04d0166b96bc64234f4ec920a21e28607eb9d34f320beba504b129f8",
+    "installerSha256": "d6d89bd3e7d8619572adc64311437d88f4a870103cccf7bde487e9c75e86f1ce",
+    "consoleTested": false
+  },
+  {
+    "firmware": "12.02",
+    "imageSha256": "99c893f24f2ed3781c21a18f00c251ae6131f8da91bdc9b8f1cf21feaf36395b",
+    "installerSha256": "936bd7aed8ee89b3bdb36c7aeed006729a62d35911cd198649176daddb29bd43",
+    "consoleTested": false
+  },
+  {
+    "firmware": "12.20",
+    "imageSha256": "c36c605d95a86ed9b4145ced63f5dc6aa4587fbe9d5119bddaa591611d49c876",
+    "installerSha256": "ab2a78ef8dec2279b7de5f6d31a3c1179e457bcfd1b4c43ddd8493153621556e",
+    "consoleTested": false
+  },
+  {
+    "firmware": "12.40",
+    "imageSha256": "2d14d10bcd3e544ef6b7816749bbe372b849d00fa1cdb24639340ce0872880af",
+    "installerSha256": "87189dfc2aa7422db1815fad26aea50b3b4b0a8c1648aef4bde096c7eeada922",
+    "consoleTested": false
+  },
+  {
+    "firmware": "12.60",
+    "imageSha256": "2e702e29ae1092ab59ae386de0d3a70b94dda128a578fd5ddfd8ac0fbcf17773",
+    "installerSha256": "f87f7ef3488adc9334bef25722cbfb65e58a2778e9c154410fd38d64877519fd",
+    "consoleTested": false
+  },
+  {
+    "firmware": "12.70",
+    "imageSha256": "716f8b72edae9782b1428da98a82d504bd3affa334f40d93f5fc2c080696e933",
+    "installerSha256": "30c2aa30216603011db197b715fe7b7caa7e29fdcb6a5ed5ccbdc43502b92ab8",
+    "consoleTested": false
+  },
+  {
+    "firmware": "13.00",
+    "imageSha256": "e769babb2e4cafb80dec54e3f4fd4b29ad7d95b6e7bfa4b20c8300707556f88a",
+    "installerSha256": "9179bb683b578fc000e0e3408d34cbabf6bca3a598e1a39568b6bb0cf966c5f9",
+    "consoleTested": false
+  },
+  {
+    "firmware": "13.20",
+    "imageSha256": "97c9a52a9ee507a9393138f87e669982bcb5a821d22a93317ea6af59de18edf6",
+    "installerSha256": "16c07e53865f9a08124f91df01109a161db6ff90a9749af2114bea4e827ca3db",
+    "consoleTested": false
+  },
+  {
+    "firmware": "13.40",
+    "imageSha256": "5c6f0355c7c163ecbb95e450405f6bbc05b1c2eaabe2aa0f11cc59cd1491a330",
+    "installerSha256": "275e00d06daea45f36f0e584289859ad18697dcee32db04c26a2274055147d39",
+    "consoleTested": false
+  },
+  {
+    "firmware": "13.42",
+    "imageSha256": "706d05ebd5dd508b3e3edfad696a9f0eec95b447179bb4197e945b51c2eb4287",
+    "installerSha256": "6a1b1210be46da99595fb1816ba92b9152a8fec80225fe612fac2dfe81284c54",
+    "consoleTested": false
+  },
+  {
+    "firmware": "13.60",
+    "imageSha256": "f8d9483afd5b07f8f33483427035e410d4972b763c61aa265f40758287c7ca52",
+    "installerSha256": "46cf4f038c6cffec542e8198890d170a9103c0e433fdd60c25c734b4119f79c9",
+    "consoleTested": false
+  }
+]

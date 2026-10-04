@@ -1,3 +1,7 @@
+#include "port_firmware.h"
+#ifndef SNIPERS_TARGET_FW
+#error Expected a pinned target firmware
+#endif
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Experimental post-Relapse lifetime test. No etaHEN or optional payload launch.
 #include <sys/param.h>
@@ -42,7 +46,7 @@ static int stop(int code,const char *message){record(message,code);notify("%s",m
 int main(void){
  setvbuf(stdout,NULL,_IONBF,0);signal(SIGPIPE,SIG_IGN);
  uint32_t fw=0;size_t len=sizeof fw;
- if(sysctlbyname("kern.sdk_version",&fw,&len,0,0)||(fw>>16)!=0x1360)return 1;
+ if(sysctlbyname("kern.sdk_version",&fw,&len,0,0)||(fw&0xffff0000u)!=SNIPERS_TARGET_FW||!snipers_firmware_profile(fw))return 1;
  // Exactly one attempt this boot, including failures. No automatic close retry.
  int latch=open(HANDOFF_LATCH,O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW,0600);
  if(latch<0)return 1;close(latch);
@@ -59,7 +63,7 @@ int main(void){
  int app=get_app("PPSA01650");if(record("ready app",app))return 1;
  if(app<0)return stop(2,"YouTube is not running; handoff test not performed");
 #ifdef SNIPERS_BUNDLED_STARTUP
- if(bundle_has_etahen&&access("/system_tmp/etahen-1360-startup",F_OK)==0)return stop(9,"etaHEN was already attempted this boot; reboot before startup");
+ if(bundle_has_etahen&&access("/system_tmp/etahen-experimental-startup",F_OK)==0)return stop(9,"etaHEN was already attempted this boot; reboot before startup");
  if(verify_embedded_payloads())return stop(10,"Bundled payload integrity failed; YouTube left open");
  puts("SNPR_OPTION_MESSAGE=Independent startup owns and verified all bundled payloads.\nSNPR_OPTION_RESULT=0");
 #else

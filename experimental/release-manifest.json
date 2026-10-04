@@ -1,0 +1,240 @@
+{
+  "channel": "experimental",
+  "basePath": "/builder/ex",
+  "releaseTagPrefix": "experimental-multifw-",
+  "githubPrerelease": true,
+  "makeLatest": false,
+  "candidates": [
+    {
+      "firmware": "7.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "7.01",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "7.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "7.40",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "7.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "7.61",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "8.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "8.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "8.40",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "8.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "9.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "9.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "9.40",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "9.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "10.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "10.01",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "10.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "10.40",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "10.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "11.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "11.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "11.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "12.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "12.02",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "12.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "12.40",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "12.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "12.70",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "13.00",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "13.20",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "13.40",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "13.42",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    },
+    {
+      "firmware": "13.60",
+      "status": "local-checks-passed",
+      "installerReady": true,
+      "startupReady": true,
+      "hardwareValidated": false
+    }
+  ]
+}

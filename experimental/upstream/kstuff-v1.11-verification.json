@@ -1,0 +1,137 @@
+{
+  "commit": "85fb88a526e58e357d6f1e626ce05af4acdb8b5d",
+  "checked": [
+    {
+      "firmware": "7.00",
+      "sha256": "9598ee47c24b34b646cd49adf8452c0f6f5357b0e0e748b90bb19f1aac30ab3f"
+    },
+    {
+      "firmware": "7.01",
+      "sha256": "2416936ea24056ea1ca8605b5f7d098389513549ec9333ef4d97dfd91c2a6b6e"
+    },
+    {
+      "firmware": "7.20",
+      "sha256": "a985a0ccf36eecb0a29006f930e3b585db4c2c55975743e8e29fb3fab401d1e9"
+    },
+    {
+      "firmware": "7.40",
+      "sha256": "7b9858546b9e12f4671412f8af83a7620838dec6af3a833e045e48221f712287"
+    },
+    {
+      "firmware": "7.60",
+      "sha256": "d1e154c191282be906f8994571a54ec845e72c520795467615a752930292866e"
+    },
+    {
+      "firmware": "7.61",
+      "sha256": "bbabf32340d369669bcf4563d69c086ae572ef484684eb210a04582a61b65d6a"
+    },
+    {
+      "firmware": "8.00",
+      "sha256": "a262fd35109d80db4af285c7ea1c4e2af792e3a589ee936b33d25e6c0710e70d"
+    },
+    {
+      "firmware": "8.20",
+      "sha256": "97665d704b9c3624da3aa2b62f829eecefc78c0dd3127bd73f94cfa852bdc0b8"
+    },
+    {
+      "firmware": "8.40",
+      "sha256": "34426437ded33db953635ef5672ea0c54c9c2fd4cba21fefaacf5fec49217a6a"
+    },
+    {
+      "firmware": "8.60",
+      "sha256": "37ad67760eea8a75b6eb3264482a8ee13c6256195fe59146855e8487836111d6"
+    },
+    {
+      "firmware": "9.00",
+      "sha256": "6d1246a34a095b746a51c22dfba2bce5254f3082aacfd5364867b1570961a135"
+    },
+    {
+      "firmware": "9.20",
+      "sha256": "5713e052b6505545e629b7f3f485cc2a7ecc434471177f5edb81b10e153c7084"
+    },
+    {
+      "firmware": "9.40",
+      "sha256": "7c3f7188279e5279f524202973a482d324cc726942a3f9f8fa29725fefbecf8a"
+    },
+    {
+      "firmware": "9.60",
+      "sha256": "5fb1f4f4604d5efeaa8da5737ea117235b9d987d8a6d3d2a28f9b09983be5d64"
+    },
+    {
+      "firmware": "10.00",
+      "sha256": "612a5951a0249aca2b145e4ca6506d747a1ca1bc8bdeb094f013b9bc4ac3a119"
+    },
+    {
+      "firmware": "10.01",
+      "sha256": "226fd1f144a64b358aa76c68ed7c19901a518a41701a1e2399466b9fed9467d7"
+    },
+    {
+      "firmware": "10.20",
+      "sha256": "2f3f59970d00c046e95f4c87dfbb98e63b5ddaa53be7fb9dc740eb26c69d8583"
+    },
+    {
+      "firmware": "10.40",
+      "sha256": "ef7b84d8d1611334f4c320eadff5fce6f7dcc2996a7920a54a859adccb04a3b7"
+    },
+    {
+      "firmware": "10.60",
+      "sha256": "39629acf316e5f7b974910d1b19b3f18186ae3765b82191c1121887ba179193f"
+    },
+    {
+      "firmware": "11.00",
+      "sha256": "7255dfd55126fbb487fc48f7ead9afdd24da03d03400d7e1a3d2e94cc31ddba1"
+    },
+    {
+      "firmware": "11.20",
+      "sha256": "4e728dc6c3ef9fc55506a818434704580d01aaa70e19a70896d7539f569ce07f"
+    },
+    {
+      "firmware": "11.60",
+      "sha256": "fac4c608acc7cafd63c57602ba37f984afebc5cfc59bf29124a8d475e7a8e620"
+    },
+    {
+      "firmware": "12.00",
+      "sha256": "6a634ddfc47871025ce046328de882826faf3364b8166758e6a0127676bad80c"
+    },
+    {
+      "firmware": "12.02",
+      "sha256": "97ce4473568140bd36ab8827be587130bd47d86d2f8f944e2976fcbf0b59edc9"
+    },
+    {
+      "firmware": "12.20",
+      "sha256": "a9f5dea3f043d6e9ea398235b1f26904ccbeb5f1aabfd527798c92d2433e5616"
+    },
+    {
+      "firmware": "12.40",
+      "sha256": "f562f1813781a961611095c1f140064dcf3ae0ba9c3671ea3893309c02d73bc7"
+    },
+    {
+      "firmware": "12.60",
+      "sha256": "fdc2e337b9d5e0b5265782ff9a73bc0e72197563057aa5aad05f43f3330e1f82"
+    },
+    {
+      "firmware": "12.70",
+      "sha256": "6daa372c7de99596215634bfef6cc0ec727687bec75c751825e5f90eb85ad715"
+    },
+    {
+      "firmware": "13.00",
+      "sha256": "571b6998448bd952549a633f8f638ed946843a11786e5849ebcbf305d988851b"
+    },
+    {
+      "firmware": "13.20",
+      "sha256": "c3fa16367ccf70c0344d60f8816238cde4e12976e7d031fc259ab81cb478a1e5"
+    },
+    {
+      "firmware": "13.40",
+      "sha256": "ac0a4eb392ccf6a257138de0f90b0a060a0e333d4d1c255031f08cca78f77c3d"
+    },
+    {
+      "firmware": "13.42",
+      "sha256": "d8f9096322b78e19692bf5cdde42294ddedad05b8876b984417c4ab3ca5c4643"
+    },
+    {
+      "firmware": "13.60",
+      "sha256": "64c5819c481b1b86d495a8e4db56046bb7d981fffe739d40e30b592343f3a57c"
+    }
+  ]
+}

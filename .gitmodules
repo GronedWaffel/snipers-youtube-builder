@@ -1,0 +1,3 @@
+[submodule "relapse-y2jb/third_party/Relapse-Exploit"]
+    path = relapse-y2jb/third_party/Relapse-Exploit
+    url = https://github.com/ntfargo/Relapse-Exploit.git

@@ -1,0 +1,1551 @@
+{
+  "checkedAt": "2026-10-04T05:06:24.150Z",
+  "scope": "Main projects and 100 newest public ntfargo forks; exact offsets filenames only",
+  "results": [
+    {
+      "repository": "ntfargo/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ntfargo/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ntfargo/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "soniciso1/relapse",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/soniciso1/relapse/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/soniciso1/relapse/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "ben443/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ben443/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ben443/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "soniciso1/relapse-dev",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/soniciso1/relapse-dev/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/soniciso1/relapse-dev/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "MarSalvatore28/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MarSalvatore28/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MarSalvatore28/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "MsPerlman/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MsPerlman/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MsPerlman/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Fartela/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Fartela/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Fartela/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "4lir324/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/4lir324/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/4lir324/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "kelmelzer/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kelmelzer/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kelmelzer/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "kmeps4/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kmeps4/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kmeps4/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "wtfbbqhax/relapse-exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/wtfbbqhax/relapse-exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/wtfbbqhax/relapse-exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "dvdgs88/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/dvdgs88/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/dvdgs88/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "MoicLoi/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MoicLoi/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MoicLoi/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "37cat/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/37cat/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/37cat/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "tt148/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/tt148/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/tt148/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "sushart/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sushart/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sushart/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "34zY/Relapse-PS5-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/34zY/Relapse-PS5-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/34zY/Relapse-PS5-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "herby7631/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/herby7631/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/herby7631/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "SylvosCai/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/SylvosCai/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/SylvosCai/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "MatrixForgeLabs/relapse-exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MatrixForgeLabs/relapse-exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MatrixForgeLabs/relapse-exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "cloudshadow/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/cloudshadow/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/cloudshadow/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "thekief/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/thekief/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/thekief/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "herosceleste/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/herosceleste/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/herosceleste/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Ulquii/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Ulquii/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Ulquii/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "muradaghaaa/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/muradaghaaa/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/muradaghaaa/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "dalisoft/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/dalisoft/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/dalisoft/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "esierra-engineer/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/esierra-engineer/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/esierra-engineer/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "binss/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/binss/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/binss/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "arnsdx/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/arnsdx/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/arnsdx/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "uhuhuhuhuhuhuhuh/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/uhuhuhuhuhuhuhuh/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/uhuhuhuhuhuhuhuh/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "sanchitd5/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sanchitd5/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sanchitd5/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "japNslow/ps5-pages",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/japNslow/ps5-pages/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/japNslow/ps5-pages/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "rastoya/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/rastoya/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/rastoya/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "rahulsingh97/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/rahulsingh97/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/rahulsingh97/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "marswjf/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/marswjf/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/marswjf/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "t012093/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/t012093/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/t012093/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Blitzedzz-3/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Blitzedzz-3/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Blitzedzz-3/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "maomiaomi/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/maomiaomi/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/maomiaomi/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "lukasbrodbeck/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/lukasbrodbeck/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/lukasbrodbeck/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "yocxy2/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/yocxy2/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/yocxy2/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "bedrosa/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/bedrosa/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/bedrosa/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "superNumbers/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/superNumbers/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/superNumbers/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "pedrohti/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/pedrohti/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/pedrohti/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "jordigomper/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jordigomper/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jordigomper/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "RatomatoR/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/RatomatoR/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/RatomatoR/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "MeroMeroMago/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MeroMeroMago/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/MeroMeroMago/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "sguthrie91/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sguthrie91/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sguthrie91/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "xasifsaeedx/Jbp5",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/xasifsaeedx/Jbp5/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/xasifsaeedx/Jbp5/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Khoosham/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Khoosham/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Khoosham/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Gtwizzy/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Gtwizzy/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Gtwizzy/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Seventty/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Seventty/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Seventty/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "AlisaCodeDragon/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/AlisaCodeDragon/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/AlisaCodeDragon/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "smarley2/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/smarley2/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/smarley2/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "ANTGO10/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ANTGO10/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ANTGO10/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "nitr0k/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/nitr0k/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/nitr0k/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "EricinRed/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/EricinRed/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/EricinRed/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "kaikailu/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kaikailu/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kaikailu/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "diesahnetorte187-max/relapse-exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/diesahnetorte187-max/relapse-exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/diesahnetorte187-max/relapse-exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "lazioxue/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/lazioxue/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/lazioxue/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "cpaulinojampa/cpaulino-Relapse",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/cpaulinojampa/cpaulino-Relapse/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/cpaulinojampa/cpaulino-Relapse/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "web-orbit12/PS5-Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/web-orbit12/PS5-Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/web-orbit12/PS5-Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "uamrws/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/uamrws/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/uamrws/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "aigamer5200-cmd/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/aigamer5200-cmd/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/aigamer5200-cmd/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Gh0st0x/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Gh0st0x/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Gh0st0x/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "chanzep/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/chanzep/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/chanzep/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "ad1tyxr/Relapse-Exploit1",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ad1tyxr/Relapse-Exploit1/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ad1tyxr/Relapse-Exploit1/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "DrewMauldin/Relapse-Exploit-Backup",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/DrewMauldin/Relapse-Exploit-Backup/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/DrewMauldin/Relapse-Exploit-Backup/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "ChuNglyRic/relapse-exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ChuNglyRic/relapse-exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/ChuNglyRic/relapse-exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "YotsubaTamiko/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/YotsubaTamiko/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/YotsubaTamiko/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "sergoddddd-cmyk/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sergoddddd-cmyk/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/sergoddddd-cmyk/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "jgeortsis/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jgeortsis/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jgeortsis/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "henouji/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/henouji/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/henouji/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Sileec/Fork-PS5Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Sileec/Fork-PS5Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Sileec/Fork-PS5Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "kunteynir228/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kunteynir228/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/kunteynir228/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "hamzamoudnib/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/hamzamoudnib/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/hamzamoudnib/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Lyheaco/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Lyheaco/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Lyheaco/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "asawaaah/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/asawaaah/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/asawaaah/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "jah2240/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jah2240/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jah2240/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "foresthpark/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/foresthpark/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/foresthpark/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "DaRkZ2012/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/DaRkZ2012/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/DaRkZ2012/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "UMMMM-GUYSSS/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/UMMMM-GUYSSS/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/UMMMM-GUYSSS/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "jhms/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jhms/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/jhms/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "QualitySystemsAB/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/QualitySystemsAB/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/QualitySystemsAB/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "RazDazler/Relapse-Exploit-PLDMGR",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/RazDazler/Relapse-Exploit-PLDMGR/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/RazDazler/Relapse-Exploit-PLDMGR/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Ryozo1/p",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Ryozo1/p/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Ryozo1/p/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "bsce26022/Relapse",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/bsce26022/Relapse/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/bsce26022/Relapse/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "NeutralTheGreat/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/NeutralTheGreat/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/NeutralTheGreat/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "silence48/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/silence48/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/silence48/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "zXIJz999/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/zXIJz999/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/zXIJz999/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Ero-gamer/Relapse-Ex",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Ero-gamer/Relapse-Ex/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Ero-gamer/Relapse-Ex/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "GoldenSend/Relapse-Exploit--Baseline-Incase-something-happens",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/GoldenSend/Relapse-Exploit--Baseline-Incase-something-happens/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/GoldenSend/Relapse-Exploit--Baseline-Incase-something-happens/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "llauret/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/llauret/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/llauret/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "D4rk2tar/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/D4rk2tar/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/D4rk2tar/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "spaivaras/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/spaivaras/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/spaivaras/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Yizrael/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Yizrael/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Yizrael/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "Loicrespin/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Loicrespin/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/Loicrespin/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "novus-inc-marketplace/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/novus-inc-marketplace/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/novus-inc-marketplace/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "iStifix/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/iStifix/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/iStifix/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "J7mbo/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/J7mbo/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/J7mbo/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "EdgeSync/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/EdgeSync/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/EdgeSync/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "yuneKim/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/yuneKim/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/yuneKim/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "GFOXSH/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/GFOXSH/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/GFOXSH/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    },
+    {
+      "repository": "0x4D656C76696E/Relapse-Exploit",
+      "files": [
+        {
+          "firmware": "9.05",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/0x4D656C76696E/Relapse-Exploit/main/offsets/9.05.js"
+        },
+        {
+          "firmware": "11.40",
+          "status": 404,
+          "url": "https://raw.githubusercontent.com/0x4D656C76696E/Relapse-Exploit/main/offsets/11.40.js"
+        }
+      ]
+    }
+  ]
+}

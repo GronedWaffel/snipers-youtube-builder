@@ -6,14 +6,14 @@ $('lookup').onsubmit=async event=>{
  try{const r=await fetch('./api/install/'+code,{cache:'no-store'}),data=await r.json();if(!r.ok)throw Error(data.error||'Lookup failed.');
   bundle=data;if(incomingCode&&code===incomingCode.toUpperCase())$('lookup').hidden=true;for(const label of data.payloads){const li=document.createElement('li');li.textContent=label;$('payload-list').append(li);}
   $('install').textContent=data.verifyOnly?'Download and verify only':'Install this YouTube bundle';$('install').hidden=false;
-  const {deviceReason}=await import('/payloads/loader.js');const reason=deviceReason(navigator.userAgent);
+  const detected=/PlayStation 5\/(\d+\.\d+)/.exec(navigator.userAgent)?.[1];const reason=!detected?'Open this installer on your PS5.':detected!==data.firmware?'This bundle is for '+data.firmware+'; detected '+detected+'.':null;
   $('install').disabled=!!reason;log(reason|| (data.verifyOnly?'This test will download and verify the bundle without replacing your startup file.':'Ready. This installs the listed payloads into YouTube startup and keeps a backup.'));
  }catch(e){log(e.message);}
 };
 $('install').onclick=async()=>{
  if(started||!bundle)return;started=true;$('install').disabled=true;$('lookup').querySelector('button').disabled=true;
  try{
-  const response=await fetch('/payloads/catalog.json',{cache:'no-store'});if(!response.ok)throw Error('PS5 loader is unavailable.');const catalog=await response.json();
+  const response=await fetch('./api/runtime',{cache:'no-store'});if(!response.ok)throw Error('PS5 loader is unavailable.');const catalog=await response.json();
   const {sha256Hex}=await import(catalog.base+'src/sha256.js');
   // ELF is downloaded over the same HTTPS origin and checked before execution.
   const base=new URL('./',location.href);const url=new URL(bundle.download.replace(/^\//,''),base).pathname;

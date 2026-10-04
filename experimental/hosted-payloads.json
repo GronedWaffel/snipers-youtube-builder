@@ -1,0 +1,117 @@
+[
+  {
+    "id": "etahen",
+    "label": "etaHEN experimental",
+    "version": "2.5B · multi-firmware candidate",
+    "bytes": 30468616,
+    "sha256": "7c72e45829251af05e5f950b531b47bdfdf71ae7340ae3d7b74e47bd8611bee1",
+    "input": "etahen-13.60/build/etaHEN-multifw-experimental.elf",
+    "acknowledgement": "etahen",
+    "description": "Community test build with exact firmware profiles. Hardware behavior is not yet validated on these versions."
+  },
+  {
+    "id": "nanodns",
+    "label": "NanoDNS",
+    "version": "0.4",
+    "bytes": 357680,
+    "sha256": "a4efc2a9f478eec2563d14a9bd649e6a195da2fe8b4a0b472ab81ed32fbb3d34",
+    "upstreamSha256": "fcfb7d47c3b295560ea1603dc015f7c4950353ef0faca16428bd425680ef1fc5",
+    "source": "https://github.com/drakmor/nanoDNS/releases/tag/0.4",
+    "input": "relapse-host/site/payloads/optional-nanodns-a4efc2a9f478.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  },
+  {
+    "id": "shadowmount",
+    "label": "ShadowMountPlus",
+    "version": "1.7beta2 - experimental supervisor",
+    "bytes": 2661088,
+    "sha256": "a398c22e6ebe472ad69b746e03f9b673a4fc65c36871e54628990b1ab8452937",
+    "upstreamSha256": "3f716a7b2220c7e87e87452ae05cad689ef842d3beb4cdad6c526cb6dfc2b6b5",
+    "source": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta2",
+    "input": "relapse-host/site/payloads/optional-shadowmount-a398c22e6ebe.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  },
+  {
+    "id": "filemanager",
+    "label": "Web File Manager",
+    "version": "1.9",
+    "bytes": 568656,
+    "sha256": "9398d1a7f116ba07cbee1c1f372d68ce91af773c6aa8d1d2ede569f288c81632",
+    "upstreamSha256": "711cb076e887fcd55d973ade8b84bb6c22720be295bfde18e32761f6e0479a3e",
+    "source": "https://github.com/owendswang/ps5-web-file-manager/releases/tag/v1.9",
+    "input": "relapse-host/site/payloads/optional-filemanager-9398d1a7f116.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  },
+  {
+    "id": "websrv",
+    "label": "Homebrew web server",
+    "version": "0.34",
+    "bytes": 1821096,
+    "sha256": "325606c13b95b5aaf97e9962c596e3baac4007d5dc7f0801617726b4d2dce59f",
+    "upstreamSha256": "54730c867c6e1148536fdcb370e63a7762d989ea87b62488ad4caff64d43f263",
+    "source": "https://github.com/ps5-payload-dev/websrv/releases/tag/v0.34",
+    "input": "relapse-host/site/payloads/optional-websrv-325606c13b95.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  },
+  {
+    "id": "ftp",
+    "label": "ftpsrv",
+    "version": "0.21.1",
+    "bytes": 415040,
+    "sha256": "64fac64521270fc34cf566b2807f31632d930a2021829260293745150a0be1ad",
+    "upstreamSha256": "7d4b31c83eae4e056580482a3a074e1db25922efc74ac1e439473b45d71a5938",
+    "source": "https://github.com/ps5-payload-dev/ftpsrv/releases/tag/v0.21.1",
+    "input": "relapse-host/site/payloads/optional-ftp-64fac6452127.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  },
+  {
+    "id": "debug",
+    "label": "PS5Debug-NG",
+    "version": "1.3.2",
+    "bytes": 4284256,
+    "sha256": "beceb021d83a4e13406516563dca4fcccd5e81608411a03ef200280dab405eef",
+    "upstreamSha256": "949b0e6e0fe3f24f4a820319fd76d9ccb92f9770cbb1a64b09a8eca5c1fc9ff3",
+    "source": "https://github.com/Pharaoh2k/ps5debug-NG",
+    "input": "relapse-host/site/payloads/optional-debug-beceb021d83a.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  },
+  {
+    "id": "payloadmanager",
+    "label": "Payload Manager",
+    "version": "0.5.2",
+    "bytes": 2640344,
+    "sha256": "692f90d86411c0a3e36b25261079a943daf6c687a8036c979a7e7f1593f7fb16",
+    "upstreamSha256": "62b3ba2a4937c2afc502f9a4e7242cca538610ebb4ae2800c7c6f72e7f268e7c",
+    "source": "https://github.com/itsPLK/ps5-payload-manager/releases/tag/v0.5.2",
+    "input": "relapse-host/site/payloads/optional-payloadmanager-692f90d86411.elf",
+    "acknowledgement": "supervisor",
+    "requires": [
+      "etahen"
+    ],
+    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+  }
+]

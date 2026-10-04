@@ -1,0 +1,34 @@
+{
+  "version": "01.000.003",
+  "titleId": "PPSA01650",
+  "bytes": 107544576,
+  "sha256": "4b0ab51bee5ffb367e4bf45ebdee2ea95f8496d49a1a7fc76fb2c301c383b007",
+  "manifestUrl": "https://sgst.prod.dl.playstation.net/sgst/prod/00/PPSA01650_00/app/info/7/f_cfbc3abdcd214584551586f604b4d8538750889cd41704788e5f24bbc6685327/UP4381-PPSA01650_00-YOUTUBESIEA00000.json",
+  "manifestSha256": "4857c3d382202e5511bf9f148c8818c12b6891617df6afa0f27765195ecf277d",
+  "tlsCertificateVerified": false,
+  "pieceChecksumsVerified": true,
+  "consoleInstallVerified": false,
+  "pieces": [
+    {
+      "offset": 0,
+      "bytes": 81854464,
+      "sha256": "72281c74406c91d18675883d0a8facab2fe5f75f4b56d0519a9a57417817fe97",
+      "manifestHash": "72281c74406c91d18675883d0a8facab2fe5f75f4b56d0519a9a57417817fe97"
+    },
+    {
+      "offset": 81854464,
+      "bytes": 25690112,
+      "sha256": "ec6cdc155fc99d8f7eabdbf3534e2f0e868b90b1d0d3e9f6c0a1290a402d61d0",
+      "manifestHash": "ec6cdc155fc99d8f7eabdbf3534e2f0e868b90b1d0d3e9f6c0a1290a402d61d0"
+    }
+  ],
+  "metadataVerified": true,
+  "metadataOffset": 81869920,
+  "metadata": {
+    "titleId": "PPSA01650",
+    "contentVersion": "01.000.003",
+    "contentId": "UP4381-PPSA01650_00-YOUTUBESIEA00000",
+    "requiredSystemSoftwareVersion": "0x0403000000000000"
+  },
+  "sonySignatureVerified": false
+}

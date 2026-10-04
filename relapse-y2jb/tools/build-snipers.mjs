@@ -1,3 +1,5 @@
+import {firmwareProfile} from '../../experimental/channel.mjs';
+const firmware=firmwareProfile(process.env.SNIPERS_FIRMWARE);
 // SPDX-License-Identifier: MIT
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,8 +26,10 @@ if(selectionAt>=0){if(!selectionFile)throw Error('Missing selection file');args.
 if (args.length && (args.length !== 2 || args[0] !== '--out')) throw Error('Usage: node tools/build-snipers.mjs [--out NEW_DIRECTORY] [--selection SERVER_MANIFEST]');
 if(selectionFile&&(!args.length||etaProfile))throw Error('Custom builds require --out and cannot use the withdrawn eta timing profile');
 if(nativeHandoff&&(!selectionFile||etaProfile))throw Error('Native handoff requires its isolated selection and normal kernel configuration');
+if(!handoffStartup||!selectionFile||etaProfile)throw Error('Experimental builds require --handoff-startup and an explicit selection.');
 const out = args.length ? path.resolve(args[1]) : path.join(root,etaProfile?'dist/snipers-y2jb-13.60-r11-eta-timing':'dist/snipers-y2jb-13.60-r10-mount-wait');
 if (fs.existsSync(out)) throw Error('Output already exists; select a new --out directory: ' + out);
+const scratch = path.join(out,'build');
 const cache = 'cache/splash_screen/aHR0cHM6Ly93d3cueW91dHViZS5jb20vdHY=';
 const dest = path.join(out,'download0',cache);
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -37,9 +41,9 @@ function replaceOnce(text, from, to) {
 function run(exe, argv) {
     const env = {...process.env};
     if (exe === (process.env.DOTNET || 'dotnet')) {
-        env.APPDATA = path.join(root,'build/dotnet-appdata');
-        env.DOTNET_CLI_HOME = path.join(root,'build/dotnet-home');
-        env.NUGET_PACKAGES = path.join(root,'build/nuget-packages');
+        env.APPDATA = path.join(scratch,'dotnet-appdata');
+        env.DOTNET_CLI_HOME = path.join(scratch,'dotnet-home');
+        env.NUGET_PACKAGES = path.join(scratch,'nuget-packages');
         env.DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1';
         env.DOTNET_CLI_TELEMETRY_OPTOUT = '1';
         env.DOTNET_GENERATE_ASPNET_CERTIFICATE = 'false';
@@ -96,9 +100,9 @@ for (const file of hostLock.files) {
 }
 const manifest = inputs.map(({input,...item}, i) => ({...item,crc32:crc32(payloads[i]).toString(16).padStart(8,'0')}));
 fs.mkdirSync(dest,{recursive:true});
-fs.mkdirSync(path.join(root,'build'),{recursive:true});
-const baseline = path.join(root,'build/relapse-1360-base.js');
-run(process.execPath,['tools/build.mjs','--fw','13.60','--out',baseline]);
+fs.mkdirSync(scratch,{recursive:true});
+const baseline = path.join(scratch,'relapse-1360-base.js');
+run(process.execPath,['tools/build.mjs','--fw',firmware.firmware,'--out',baseline]);
 let payload = fs.readFileSync(baseline,'utf8');
 payload = replaceOnce(payload,'const NET_LOG = "auto";', 'const NET_LOG = '+JSON.stringify(logIP)+';');
 payload = replaceOnce(payload,'const NET_LOG_PORT = 5050;', 'const NET_LOG_PORT = 5051;');
@@ -110,6 +114,7 @@ if(selectionFile){
     transport=replaceOnce(transport,"if (item.id === 'etahen') {", "if (item.id === 'etahen' || item.acknowledgement === 'dispatch') {");
     transport=replaceOnce(transport,"logger('etaHEN sent. ShadowMount supervisor will wait for the current Toolbox startup.');", "logger(item.id === 'etahen' ? 'etaHEN sent; the readiness check runs next.' : item.label + ': ELF sent; no readiness protocol supplied.');");
 }
+startup=replaceOnce(startup,"firmware!=='13.60'",'firmware!=='+JSON.stringify(firmware.firmware));
 const helpers = read('src/snipers-integrity.js') + '\n' + read('src/snipers-dashboard.js') + '\n' + startup + '\n' + transport + '\n' + read('src/snipers-network.js');
 payload = replaceOnce(payload,'(async function () {','(async function () {\nlet snipers = null;\n'+helpers);
 payload = replaceOnce(payload,'        const chain = new Y2Chain(p);',
@@ -126,9 +131,9 @@ payload = replaceOnce(payload,'        send_notification("relapse complete\\nelf
 payload = replaceOnce(payload,'        restore_log_socket();',
     '        if (snipers) snipers.dispose();\n        restore_log_socket();');
 // Upstream wording certifies app-close behavior too broadly; this integration
-// has not been tested on hardware. Never close YouTube automatically.
+// has not been tested on hardware. The native handoff closes YouTube automatically.
 payload = replaceOnce(payload,' - both pipes hold their own buffers again, the app is safe to close',
-    ' - pipe buffers restored; closing YouTube on 13.60 still needs hardware validation');
+    ' - pipe buffers restored; closing YouTube with this experimental build still needs hardware validation');
 if (Buffer.byteLength(payload) > 0x40000) throw Error('Relapse payload exceeds remote-loader compatibility limit');
 const hostFiles = hostLock.files.filter(file => file.path.startsWith('download0/'));
 for (const file of hostFiles) {
@@ -140,8 +145,8 @@ for (const file of hostFiles) {
 let main = fs.readFileSync(path.join(dest,'main.js'),'utf8').replace(/\r\n/g,'\n');
 main = replaceOnce(main,'await checkLogServer();','NETWORK_LOGGING = false; // No remote log server in this build.');
 main = replaceOnce(main,"await load_localscript('remotejsloader.js');",
-    "if (String(FW_VERSION) !== '13.60') {\n"+
-    "            send_notification('Snipers startup requires PS5 13.60'); return;\n        }\n"+
+    "if (String(FW_VERSION) !== "+JSON.stringify(firmware.firmware)+") {\n"+
+    "            send_notification('Snipers startup firmware does not match this bundle'); return;\n        }\n"+
     "        await load_localscript('relapse.js');");
 for (const script of ['kernel.js','aioshellcode.js','relapse.js']) {
     main = replaceOnce(main, "await load_localscript('"+script+"');",
@@ -166,7 +171,7 @@ fs.writeFileSync(path.join(out,'build-manifest.json'),JSON.stringify({
     etaStartupProfiling:etaProfile,
     relapseCommit:'bcddec7de9ee5382b675cff30cbc7f21ad03af14',
     kernelCommit:kernelPin,
-    y2jbCommit:hostLock.commit,firmware:'13.60',youtubeVersion:'01.000.030',
+    y2jbCommit:hostLock.commit,firmware:firmware.firmware,youtubeVersion:firmware.youtubeVersion,channel:'experimental',
     imageSha256:imageHash,payloads:manifest,
     generatedRelapse:{bytes:Buffer.byteLength(payload),sha256:hash(payload)},
     diagnosticUDP:logIP === 'off' ? null : logIP+':5051',

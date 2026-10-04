@@ -167,31 +167,19 @@ static int eta_ready(){
  return s.classify(KERNEL_ADDRESS_DATA_BASE)==PortKstuffState::Installed&&s.injectionReady(KERNEL_ADDRESS_DATA_BASE)&&kstuff_probe();
 }
 #ifdef OPTIONAL_PAYLOADMANAGER
+#include "payloadmanager-config.hpp"
 static bool prepare_manager_config(){
  const char* path="/data/pldmgr/pldmgr_config.txt";
  if(mkdir("/data/pldmgr",0755)&&errno!=EEXIST)return false;
- int fd=open(path,O_WRONLY|O_CREAT|O_EXCL,0644);
- if(fd>=0){
-  const char config[]="AUTOLOAD_ENABLED=0\nAUTO_BROWSER_OPEN=0\nKILL_DISC_PLAYER_ON_STARTUP=0\nAUTO_INSTALL_APP=1\n";
-  size_t done=0;while(done<sizeof(config)-1){ssize_t n=write(fd,config+done,sizeof(config)-1-done);if(n<=0){close(fd);unlink(path);return false;}done+=(size_t)n;}
-  const bool ok=fsync(fd)==0;close(fd);return ok;
- }
- if(errno!=EEXIST)return false;
- // Keep existing settings; refuse a competing autoload or browser sequence.
- FILE* f=fopen(path,"r");if(!f)return false;
- char line[256];int autoload=0,browser=1,disc=1;
- while(fgets(line,sizeof(line),f)){
-  if(!strncmp(line,"AUTOLOAD_ENABLED=",17))autoload=atoi(line+17);
-  if(!strncmp(line,"AUTO_BROWSER_OPEN=",18))browser=atoi(line+18);
-  if(!strncmp(line,"KILL_DISC_PLAYER_ON_STARTUP=",28))disc=atoi(line+28);
- }
- const bool ok=!ferror(f)&&!autoload&&!browser&&!disc;fclose(f);return ok;
+ char backup[512];const int result=manager_prepare(path,backup,sizeof(backup));
+ if(result==1)progress(backup[0]?"Payload Manager settings backed up; competing startup actions disabled":"Payload Manager startup settings created");
+ return result>=0;
 }
 #endif
 int main(){
  uint32_t fw=0;size_t size=sizeof(fw);
- if(sysctlbyname("kern.sdk_version",&fw,&size,nullptr,0)||(fw>>16)!=0x1360)
-  return finish(-1,"requires PS5 13.60; nothing loaded");
+ if(sysctlbyname("kern.sdk_version",&fw,&size,nullptr,0)||!snipers_firmware_profile(fw))
+  return finish(-1,"unsupported experimental firmware; nothing loaded");
  int existing=find_process(needle),busy=occupied(port);
  if(existing<0||busy<0)return finish(-3,"could not check existing services; nothing loaded");
  if(existing>0)return finish(1,"already running; not loaded again");
@@ -199,9 +187,6 @@ int main(){
  if(busy&&debugger_ready())return finish(1,"already running; not loaded again");
 #endif
  if(busy)return finish(-4,"service port is occupied; nothing loaded");
-#ifdef OPTIONAL_PAYLOADMANAGER
- if(!prepare_manager_config())return finish(-13,"existing settings preserved; turn off Payload Manager autoload, automatic browser opening and Disc Player closing before using this host option");
-#endif
  for(int i=0;;++i){
   const int ready=eta_ready();
   if(ready<0)return finish(-12,"etaHEN Toolbox startup failed or ShellUI restarted; no optional payload loaded; restart before retrying");
@@ -213,6 +198,9 @@ int main(){
  if(existing<0||busy<0)return finish(-3,"could not check existing services; nothing loaded");
  if(existing>0)return finish(1,"already running; not loaded again");
  if(busy)return finish(-4,"service port is occupied; nothing loaded");
+#ifdef OPTIONAL_PAYLOADMANAGER
+ if(!prepare_manager_config())return finish(-13,"could not back up and prepare startup settings; original configuration preserved; nothing loaded");
+#endif
 #ifdef OPTIONAL_SHADOWMOUNT
  const int conflict=find_process("backpork");
  if(conflict!=0)return finish(-5,"BackPork is present or cannot be excluded; restart without BackPork");

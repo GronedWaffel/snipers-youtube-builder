@@ -1,0 +1,209 @@
+{
+  "checkedAt": "2026-10-04T04:52:18.663Z",
+  "relapseTables": 33,
+  "kstuffTables": 35,
+  "kstuffVersionsAbsentFromRelapse": [
+    "11.40",
+    "9.05"
+  ],
+  "rows": [
+    {
+      "firmware": "10.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "10.01",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "10.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "10.40",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "10.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "11.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "11.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "11.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "12.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "12.02",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "12.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "12.40",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "12.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "12.70",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "13.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "13.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "13.40",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "13.42",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "13.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "7.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "7.01",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "7.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "7.40",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "7.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "7.61",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "8.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "8.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "8.40",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "8.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "9.00",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "9.20",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "9.40",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    },
+    {
+      "firmware": "9.60",
+      "kstuffAllprocMatchesRelapse": true,
+      "sdkHasCase": true,
+      "requiredStateOffsetsPresent": true
+    }
+  ]
+}

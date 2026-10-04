@@ -1,0 +1,17 @@
+# Sony/PlayStation namespaces only; suffix matching includes all subdomains.
+# manuals.playstation.net is a more-specific redirect exception.
+# Never block shared providers such as akamai.net, cloudfront.net, google.com.
+playstation.net
+playstation.com
+playstation.org
+sonyentertainmentnetwork.com
+sonyentertainmentnetwork.net
+sonyinteractive.com
+sony.com
+sony.net
+scea.com
+scee.net
+scei.co.jp
+# Sony-specific hostnames on otherwise shared CDNs.
+playstation.sony.akadns.net
+a01.cdn.update.playstation.org.edgesuite.net

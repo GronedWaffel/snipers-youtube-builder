@@ -1,3 +1,4 @@
+#include "firmware-target.h"
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Native PS5 payload: reads metadata/state only. No app launch or file writes.
 #include <sys/param.h>
@@ -25,8 +26,8 @@ static int youtube_preflight(void){
  setvbuf(stdout,NULL,_IONBF,0);
  printf("SNIPERS_YOUTUBE_PREFLIGHT=1\n");
  uint32_t firmware=0;size_t size=sizeof firmware;
- if(sysctlbyname("kern.sdk_version",&firmware,&size,NULL,0)||(firmware>>16)!=0x1360)
-  return finish(-1,"This installer currently supports PS5 13.60 only.");
+ if(sysctlbyname("kern.sdk_version",&firmware,&size,NULL,0)||!snipers_target_matches(firmware))
+  return finish(-1,"This installer does not match your PS5 firmware.");
  const char *file="/system_data/priv/appmeta/PPSA01650/param.json";
  int fd=open(file,O_RDONLY|O_NOFOLLOW);if(fd<0)return finish(-2,"YouTube PPSA01650 metadata is unavailable.");
  struct stat st;char text[32768];
@@ -36,9 +37,9 @@ static int youtube_preflight(void){
  json_t pool[256];const json_t *json=json_create(text,pool,256);
  if(!json)return finish(-5,"YouTube metadata could not be parsed.");
  const json_t *title=json_getProperty(json,"titleId"),*version=json_getProperty(json,"contentVersion");
- if(!title||!version||json_getType(title)!=JSON_TEXT||json_getType(version)!=JSON_TEXT||strcmp(json_getValue(title),"PPSA01650")||strcmp(json_getValue(version),"01.000.030"))
-  return finish(-6,"Expected YouTube PPSA01650 version 01.000.030.");
- printf("YOUTUBE_VERSION=01.000.030\n");
+ if(!title||!version||json_getType(title)!=JSON_TEXT||json_getType(version)!=JSON_TEXT||strcmp(json_getValue(title),"PPSA01650")||strcmp(json_getValue(version),SNIPERS_YOUTUBE_VERSION))
+  return finish(-6,"Expected YouTube PPSA01650 version " SNIPERS_YOUTUBE_VERSION ".");
+ printf("YOUTUBE_VERSION=" SNIPERS_YOUTUBE_VERSION "\n");
  int (*get_app_id)(const char*)=dlsym(RTLD_DEFAULT,"sceLncUtilGetAppId");
  if(!get_app_id)return finish(-7,"YouTube running-state lookup is unavailable.");
  int app=get_app_id("PPSA01650");printf("YOUTUBE_APP_ID=%d\n",app);

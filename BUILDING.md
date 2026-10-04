@@ -1,3 +1,7 @@
+# Experimental channel
+
+Use [experimental/README.md](experimental/README.md) for this branch. All 33 candidates passed local integration, not hardware validation. The instructions and results below describe the historical stable 13.60 build.
+
 # Building and self-hosting
 
 This repository is a source snapshot of a Windows-built integration. It is not a one-command SDK distribution. Keep the sibling directory layout; do not flatten `relapse-host`, `relapse-y2jb`, and `etahen-13.60`.
