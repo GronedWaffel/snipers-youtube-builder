@@ -15,7 +15,7 @@
 
 static int finish(int code,const char *message){
 #ifdef SNIPERS_INSTALLER
- printf("SNPR_OPTION_PROGRESS=%s\n",message);fflush(stdout);
+ progress(message);
 #else
  printf("SNPR_OPTION_MESSAGE=%s\nSNPR_OPTION_RESULT=%d\n",message,code);fflush(stdout);
 #endif
