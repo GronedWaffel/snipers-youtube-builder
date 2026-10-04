@@ -8,7 +8,7 @@ Every target passed a local build of the native startup loader, complete verifie
 
 Installation requires an existing jailbreak and etaHEN. Choose the console's exact firmware. YouTube PPSA01650 01.000.003 is used below 12.60; 01.000.030 is used at 12.60 and later. The installer verifies package bytes and installed metadata, checks firmware before changing files, and recovers from a missing DPI reply by observing installation completion. Never load standalone etaHEN and the bundled startup in the same boot.
 
-etaHEN uses a separate experimental configuration and startup receipts. Profiles combine pinned public Relapse, SDK and kstuff tables; the embedded kstuff v1.11 release was checked independently. Mono Boot ABI checks reject an unknown signature before hook publication. Toolbox behavior and optional upstream payload compatibility still need community testing on each firmware. The Toolbox card helper remains 13.60-only.
+etaHEN uses a separate experimental configuration and startup receipts. Profiles combine pinned public Relapse, SDK and kstuff tables; the embedded kstuff v1.11 release was checked independently. Mono Boot ABI checks reject an unknown signature before hook publication. Toolbox behavior and optional upstream payload compatibility still need community testing on each firmware. Experimental r5 enables the Toolbox dashboard card helper on every exact supported profile, uses the legacy Toolbox route from 11.00 onward, and includes card registration results in uploaded diagnostics. Lower-firmware card installation and opening still require community testing; r4 Toolbox initialization was confirmed in three 11.20 report runs.
 
 ## Rebuilding
 

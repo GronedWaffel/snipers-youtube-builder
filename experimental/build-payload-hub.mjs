@@ -6,7 +6,7 @@ const credits={etahen:'LightningMods and etaHEN contributors; GronedWaffel integ
 const records=[];
 for(const item of hosted){const bytes=await fs.readFile(path.join(root,item.input));if(bytes.length!==item.bytes||createHash('sha256').update(bytes).digest('hex')!==item.sha256)throw Error('Payload checksum changed: '+item.id);
  const file=item.id+'-'+item.sha256.slice(0,12)+'.elf';await fs.copyFile(path.join(root,item.input),path.join(out,file));
- records.push({id:item.id,name:item.label,version:item.version,bytes:item.bytes,sha256:item.sha256,url:'/payloads/ex/'+file,author:credits[item.id]||'Original upstream contributors',completion:item.id==='etahen'?false:'optional',source:item.id==='etahen'?'https://github.com/GronedWaffel/etahen-13.60/releases/tag/v2.5B-multifw-experimental.4':'/builder/ex/credits'});
+ records.push({id:item.id,name:item.label,version:item.version,bytes:item.bytes,sha256:item.sha256,url:'/payloads/ex/'+file,author:credits[item.id]||'Original upstream contributors',completion:item.id==='etahen'?false:'optional',source:item.id==='etahen'?'https://github.com/GronedWaffel/etahen-13.60/releases/tag/v2.5B-multifw-experimental.5':'/builder/ex/credits'});
 }
 await fs.writeFile(path.join(out,'catalog.json'),JSON.stringify({channel:'experimental',firmwares:profiles.firmwares.map(p=>p.firmware),excluded:profiles.excluded,records},null,2)+'\n');
 await fs.writeFile(path.join(out,'SHA256SUMS.txt'),records.map(r=>r.sha256+'  '+path.basename(r.url)).join('\n')+'\n');
