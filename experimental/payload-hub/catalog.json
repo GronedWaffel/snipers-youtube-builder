@@ -44,12 +44,12 @@
       "id": "etahen",
       "name": "etaHEN experimental",
       "version": "2.5B · multi-firmware candidate",
-      "bytes": 30468616,
-      "sha256": "7c72e45829251af05e5f950b531b47bdfdf71ae7340ae3d7b74e47bd8611bee1",
-      "url": "/payloads/ex/etahen-7c72e4582925.elf",
+      "bytes": 30515360,
+      "sha256": "446008e6353efc7302b0d92d2b578e877c33eac73d4d8da34253f31f48dc95f4",
+      "url": "/payloads/ex/etahen-446008e6353e.elf",
       "author": "LightningMods and etaHEN contributors; GronedWaffel integration",
       "completion": false,
-      "source": "https://github.com/GronedWaffel/etahen-13.60/releases/tag/v2.5B-multifw-experimental.1"
+      "source": "https://github.com/GronedWaffel/etahen-13.60/releases/tag/v2.5B-multifw-experimental.2"
     },
     {
       "id": "nanodns",

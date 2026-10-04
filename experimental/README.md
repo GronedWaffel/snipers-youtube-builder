@@ -40,3 +40,7 @@ Build sessions expire after 20 minutes. Experimental defaults are 20 sessions an
 PS Neighborhood and GTA V publish separate experimental releases using the same exact firmware list. PS Neighborhood keeps native package installation, patch removal, decrypted-save operations and ShadowMount batch registration restricted to 13.60. GTA retains game-build fingerprint, Story Mode, compare-before-write and rollback checks. Protocol compatibility and successful compilation do not establish hardware compatibility.
 
 See the root `CREDITS.md`, `LICENSES.md`, pinned research in `upstream/`, and `integration-results.json` for provenance and recorded checks.
+
+## Community diagnostic reports
+
+Experimental etaHEN now records persistent startup diagnostics. After recovery, use **Upload experimental etaHEN log** on either builder (or `/build`) from the jailbroken PS5. The button runs a read-only collector and sends the selected logs over HTTPS to private server storage. Reports receive a reference ID. See [diagnostic details](diagnostics/README.md) for coverage, retention, privacy, limits, and operator access. Download a fresh experimental ELF or rebuild your YouTube bundle to receive the logger; existing installed bundles do not change automatically.

@@ -1,0 +1,25 @@
+[Unit]
+Description=Snipers private experimental diagnostics
+After=network.target
+
+[Service]
+User=snipers-diagnostics
+Group=snipers-diagnostics
+WorkingDirectory=/opt/snipers-diagnostics/current
+ExecStart=/usr/bin/node server.mjs
+Environment=PORT=8790
+Environment=DIAGNOSTIC_STORAGE=/var/lib/snipers-diagnostics
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/snipers-diagnostics
+MemoryMax=256M
+CPUQuota=25%
+Nice=10
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
