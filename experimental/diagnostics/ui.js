@@ -8,12 +8,30 @@ const status=document.createElement('p');status.setAttribute('role','status');st
 section.append(title,description,button,status);(document.querySelector('main')||document.body).append(section);
 const fw=/PlayStation 5\/(\d+\.\d+)/.exec(navigator.userAgent)?.[1];
 if(!fw){button.disabled=true;status.textContent='Open this page on your jailbroken PS5 to collect its logs automatically.';}
-let busy=false,pendingReport=null;
+let busy=false,pendingReport=null,completed=false;
+function showReceipt(reply){
+ const message='Your diagnostic logs have been received. Thank you for helping improve experimental etaHEN. You can close this page now.';
+ status.textContent='Log uploaded successfully. Report ID: '+reply.id+'. '+message;
+ status.style.cssText='padding:20px;border:2px solid #63e6a4;border-radius:12px;background:#123629;color:#fff;font-size:20px;overflow-wrap:anywhere';
+ button.textContent='Log uploaded successfully';
+ const overlay=document.createElement('div');overlay.id='diagnostic-upload-confirmation';
+ overlay.style.cssText='position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto';
+ const card=document.createElement('div');card.setAttribute('role','dialog');card.setAttribute('aria-modal','true');card.setAttribute('aria-labelledby','diagnostic-success-title');card.setAttribute('aria-describedby','diagnostic-success-message');
+ card.style.cssText='box-sizing:border-box;width:100%;max-width:720px;padding:36px;border:3px solid #63e6a4;border-radius:18px;background:#10281f;color:#fff;font:20px/1.5 system-ui,sans-serif';
+ const heading=document.createElement('h2');heading.id='diagnostic-success-title';heading.textContent='Log uploaded successfully';heading.style.cssText='color:#8affbf;font-size:32px;line-height:1.2;margin:0 0 20px';
+ const body=document.createElement('p');body.id='diagnostic-success-message';body.textContent=message;
+ const receipt=document.createElement('p');receipt.textContent='Report ID: '+reply.id;receipt.style.cssText='font:18px/1.5 monospace;overflow-wrap:anywhere';
+ const detail=document.createElement('p');detail.textContent=reply.containsNewTrace?'Detailed experimental startup trace included.':'Older component logs received. Use the latest experimental etaHEN for the detailed startup trace.';
+ const done=document.createElement('button');done.type='button';done.textContent='Done';done.style.cssText='padding:14px 32px;font:700 22px system-ui,sans-serif;background:#8affbf;color:#10281f;border:0;border-radius:8px;cursor:pointer';
+ const dismiss=()=>{overlay.remove();status.tabIndex=-1;status.focus();status.scrollIntoView({block:'center'});};
+ done.onclick=dismiss;overlay.onkeydown=event=>{if(event.key==='Escape'){event.preventDefault();dismiss();}else if(event.key==='Tab'){event.preventDefault();done.focus();}};
+ card.append(heading,body,receipt,detail,done);overlay.append(card);document.body.append(overlay);done.focus();
+}
 button.onclick=async()=>{
  if(busy)return;
  if(!location.pathname.startsWith('/builder/ex/')){location.href='/builder/ex/?diagnostics=1';return;}
  section.scrollIntoView({block:'center'});
- busy=true;button.disabled=true;const log=text=>{status.textContent=text;};
+ busy=true;button.disabled=true;const log=text=>{if(!completed)status.textContent=text;};
  let report=pendingReport;
  try{
   if(!report){
@@ -37,9 +55,10 @@ button.onclick=async()=>{
   log('Uploading diagnostic report securely…');
   const upload=await fetch('/diagnostics/api/reports',{method:'POST',headers:{'Content-Type':'application/json','X-Snipers-Diagnostics':'1'},body:JSON.stringify(report)});
   const reply=await upload.json();if(!upload.ok)throw Error(reply.error||'Upload failed.');
+  if(!/^[a-f0-9]{32}$/.test(reply.id)||typeof reply.containsNewTrace!=='boolean')throw Error('The server did not return a valid upload receipt. Please retry.');
   pendingReport=null;
-  log('Log uploaded. Report ID: '+reply.id+'. '+(reply.containsNewTrace?'Thank you—this includes the detailed experimental startup trace.':'Older component logs were collected. Install the latest experimental etaHEN to record the new detailed trace.'));
- }catch(error){log(error.message+' No console files were changed.');busy=false;button.disabled=false;}
+  completed=true;showReceipt(reply);
+ }catch(error){log(error.message+' No console files were changed.');status.style.cssText='padding:16px;border:2px solid #ff7777;color:#fff;background:#401c1c;font-size:20px';status.scrollIntoView({block:'center'});busy=false;button.disabled=false;button.textContent=pendingReport?'Retry log upload':'Try log collection again';}
 };
 
 if(fw&&new URLSearchParams(location.search).get("diagnostics")==="1")button.click();
