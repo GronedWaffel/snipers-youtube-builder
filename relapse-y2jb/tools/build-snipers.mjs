@@ -171,7 +171,7 @@ fs.writeFileSync(path.join(out,'build-manifest.json'),JSON.stringify({
     etaStartupProfiling:etaProfile,
     relapseCommit:'bcddec7de9ee5382b675cff30cbc7f21ad03af14',
     kernelCommit:kernelPin,
-    y2jbCommit:hostLock.commit,firmware:firmware.firmware,youtubeVersion:firmware.youtubeVersion,channel:'experimental',
+    y2jbCommit:hostLock.commit,firmware:firmware.firmware,youtubeVersion:firmware.youtubeVersion,channel:'unified',
     imageSha256:imageHash,payloads:manifest,
     generatedRelapse:{bytes:Buffer.byteLength(payload),sha256:hash(payload)},
     diagnosticUDP:logIP === 'off' ? null : logIP+':5051',

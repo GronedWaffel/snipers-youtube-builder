@@ -5,13 +5,16 @@ import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import {root,source,zig} from '../scripts/toolchain.mjs';
 
-test('dashboard URI reaches Toolbox through both Boot ABIs across the firmware route boundary',()=>{
+test('dashboard URI reaches Toolbox through both Boot ABIs on supported 11.00+ profiles',()=>{
  const hooks=readFileSync(path.join(source,'shellui/src/HookFunctions.cpp'),'utf8');
  const start=hooks.indexOf('  template<typename Argument> bool port_boot_dispatch');
  const end=hooks.indexOf('  GamePadData GetData_hook',start);
  assert.ok(start>0&&end>start);
  const code=`
 #include <cassert>
+#include "private-1240-p5.h"
+void P5Count(P5Counter){}
+void P5Event(const char*,uint64_t,int){}
 #include <string>
 #include <stdint.h>
 static uint32_t firmware;
@@ -38,20 +41,21 @@ ${hooks.slice(start,end)}
 static void dirty(){cheats_shortcut_activated=cheats_shortcut_activated_not_open=game_shortcut_activated=game_shortcut_activated_media=true;}
 static void clean(){assert(!cheats_shortcut_activated&&!cheats_shortcut_activated_not_open&&!game_shortcut_activated&&!game_shortcut_activated_media);}
 int main(){
- const uint32_t cases[]={0x07000000,0x10600001,0x11000000,0x11200005,0x12020000,0x13200000,0x13600000};
+ const uint32_t cases[]={0x11000000,0x11200005,0x11600000,0x12020000,0x12400000,0x13200000,0x13600000};
  for(auto fw:cases){firmware=fw;assert(snipers_firmware_profile(fw));
   const char* expected=fw<0x11000000?"pssettings:play?mode=settings&function=debug_settings":"pssettings:play?mode=settings&function=debug_settings_old";
   assert(std::string(port_toolbox_uri())==expected);
   for(bool lite:{false,true}){global_conf.lite_mode=lite;
-   for(const char* uri:{"etaHEN?Toolbox","pssettings:play?mode=settings&function=debug_settings_old&etahen_root=1"}){
+   for(const char* uri:{"pshome:gamehub?titleId=ETHN13600","etaHEN?Toolbox","pssettings:play?mode=settings&function=debug_settings_old&etahen_root=1"}){
     MonoString input=uri;dirty();assert(uri_boot_hook_2(&input,-2147483647));clean();assert(seen==expected&&seen_opt==-2147483647);
     dirty();assert(uri_boot_hook(&input,7,0x123456789abcdefLL));clean();assert(seen==expected&&seen_opt==7&&seen_arg==0x123456789abcdefLL);
     MonoString title="title";dirty();assert(uri_boot_hook_string(&input,8,&title));clean();assert(seen==expected&&seen_string==&title);
    }
   }
  }
- for(uint32_t unsupported:{0x09050000u,0x11400000u,0x13990000u,0u})assert(!snipers_firmware_profile(unsupported));
+ for(uint32_t unsupported:{0x07000000u,0x10600001u,0x10990000u,0x09050000u,0x11400000u,0x13990000u,0u})assert(!snipers_firmware_profile(unsupported));
  MonoString unrelated="pssettings:play?mode=settings&function=network";dirty();assert(uri_boot_hook_2(&unrelated,42));assert(seen==unrelated&&seen_opt==42&&game_shortcut_activated);
+ assert(!port_toolbox_root_requested("pshome:gamehub?titleId=PPSA04264"));assert(!port_toolbox_root_requested("pshome:gamehub?titleId=ETHN136000"));assert(!port_toolbox_root_requested("pshome:gamehub?titleId=ETHN13600&other=1"));
  assert(!port_toolbox_root_requested(nullptr));assert(!port_toolbox_root_requested("etaHEN?ToolboxExtra"));
 }
 `;

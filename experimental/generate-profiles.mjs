@@ -11,6 +11,7 @@ const hex=n=>'0x'+n.toString(16);
 const hash=s=>createHash('sha256').update(s).digest('hex');
 for(const name of fs.readdirSync(path.join(upstream,'relapse-tables')).sort((a,b)=>parseFloat(a)-parseFloat(b))){
  const firmware=name.slice(0,-3),code=parseInt(firmware.replace('.',''),16)*65536;
+ if(parseFloat(firmware)<11)continue;
  const relapse=fs.readFileSync(path.join(upstream,'relapse-tables',name),'utf8'),kstuff=fs.readFileSync(path.join(upstream,'kstuff-tables',firmware+'.h'),'utf8');
  const block=sdk.slice(sdk.indexOf('switch(kernel_get_fw_version()')).split('break;').find(s=>[...s.matchAll(/case (0x[\da-f]+):/gi)].some(m=>parseInt(m[1],16)===code));
  if(!block)throw Error('SDK case missing for '+firmware);
@@ -24,7 +25,7 @@ for(const name of fs.readdirSync(path.join(upstream,'relapse-tables')).sort((a,b
  if(allproc!==ks('allproc')||allproc!==rel('ALLPROC')-rel('DATA')||textDelta!==rel('DATA'))throw Error('Address bases disagree for '+firmware);
  rows.push({firmware,code:hex(code),status:'experimental-unvalidated',youtubeVersion:parseFloat(firmware)<12.60?'01.000.003':'01.000.030',offsets:{allproc,security,rootvnode,textDelta,sysentvec:ks('sysentvec'),sysentvecPs4:ks('sysentvec_ps4'),cryptSingletonArray:ks('crypt_singleton_array'),sysents:ks('sysents'),sysentsPs4:ks('sysents_ps4'),pagerTable},sources:{relapse:hash(relapse),kstuff:hash(kstuff)}});
 }
-const profile={channel:'experimental',basePath:'/builder/ex',commits,sdkSha256:hash(sdk),pagerSource:{project:'ps5-payload-dev/ftpsrv',version:'0.21.1',file:'self-prospero.c',sha256:hash(pagerSource)},excluded:{'9.05':'No public Relapse table found','11.40':'No public Relapse table found'},firmwares:rows};
+const profile={channel:'unified',basePath:'/builder',commits,sdkSha256:hash(sdk),pagerSource:{project:'ps5-payload-dev/ftpsrv',version:'0.21.1',file:'self-prospero.c',sha256:hash(pagerSource)},excluded:{'11.40':'No public Relapse table found'},firmwares:rows};
 fs.writeFileSync(path.join(here,'firmware-profiles.json'),JSON.stringify(profile,null,2)+'\n');
 const fields=Object.keys(rows[0].offsets);
 const header=`// SPDX-License-Identifier: GPL-3.0-or-later

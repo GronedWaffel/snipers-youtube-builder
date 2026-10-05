@@ -1,3 +1,6 @@
+#include "../../include/port_plugin_runtime.h"
+#include "../../include/port_prx.h"
+#include "private-1240-p5.h"
 #include "port_kstuff.hpp"
 #include "port_toolbox_route.hpp"
 /* Copyright (C) 2025 etaHEN / LightningMods
@@ -121,9 +124,10 @@ void RemoveGameWidget(RemoveWidget widget) {
     // Helper lambda to remove widgets by name
     auto removeWidgets = [](const std::vector<const char*>& widgetNames) {
         MonoClass* widgetClass = mono_class_from_name(pui_img, "Sce.PlayStation.PUI.UI2", "Widget");
-        MonoObject* rootWidget = Get_Property<MonoObject*>(pui_img, "Sce.PlayStation.PUI.UI2", "Scene", Game, "RootWidget");
+        MonoObject* rootWidget = OverlayRoot();
+        if (!rootWidget) return;
         for (const char* name : widgetNames) {
-            MonoObject* child = Invoke<MonoObject*>(pui_img, widgetClass, rootWidget, "FindWidgetByName", mono_string_new(Root_Domain, name));
+            MonoObject* child = OverlayFind(rootWidget, name);
             if (child) {
                 Invoke<void>(pui_img, widgetClass, child, "RemoveFromParent");
             }
@@ -160,8 +164,10 @@ void RemoveGameWidget(RemoveWidget widget) {
 }
 
 void CreateGameWidget(CreateWidget widget) {
+    MonoObject* rootWidget = OverlayRoot();
+    if (!rootWidget) return;
     MonoObject* font = CreateUIFont(22, 0, 0);
-    MonoObject* rootWidget = Get_Property<MonoObject*>(pui_img, "Sce.PlayStation.PUI.UI2", "Scene", Game, "RootWidget");
+    if (!font) return;
 
     std::vector<WidgetConfig> configs;
 
@@ -233,6 +239,7 @@ void CreateGameWidget(CreateWidget widget) {
 
     // Create and append all widgets
     for (const auto& config : configs) {
+        if (OverlayFind(rootWidget, config.id)) continue;
         MonoObject* label = CreateLabel(config.id, config.x, config.y, config.text, font,
             config.bold, 0, config.r, config.g, config.b, config.a);
         Widget_Append_Child(rootWidget, label);
@@ -1007,10 +1014,24 @@ void UpdateImposeStatusFlag_hook(MonoObject* scene, MonoObject* frontActiveScene
     UpdateImposeStatusFlag_Orig(scene, frontActiveScene);
 }
 
+struct PrxToggle { std::string path,name;bool enabled; };
+void* toggle_prx_thread(void* args){
+    auto request=(PrxToggle*)args;
+    bool ok=IPC_Client::getInstance(false).LaunchGamePlugin(request->path,request->enabled);
+    if(!ok)notify("PRX request failed: %s. Check module format, platform and log.",request->name.c_str());
+    else notify(request->enabled?"PRX armed for its game: %s":"PRX disarmed: %s. Close the game to unload an already loaded module.",request->name.c_str());
+    delete request;return nullptr;
+}
 void* load_plugin_thread(void* args) {
     Plugins *plugin = (Plugins*)args;
 
     notify("Loading Plugin %s ...", plugin->path.c_str());
+    if (plugin->game) {
+        bool ok=IPC_Client::getInstance(false).LaunchGamePlugin(plugin->path);
+        notify(ok ? "Game plugin process started: %s" : "Game plugin not loaded: %s. Check the plugin file and diagnostic log.",plugin->name.c_str());
+        delete plugin;
+        return nullptr;
+    }
     IPC_Client& util_ipc = IPC_Client::getInstance(true);
     if (util_ipc.LaunchPlugin(plugin->path, plugin->tid) != IPC_Ret::NO_ERROR) {
         notify("Failed to launch plugin %s (%s)", plugin->path.c_str(), plugin->tid.c_str());
@@ -1218,16 +1239,17 @@ int OnPress_Hook(MonoObject* Instance, MonoObject* element, MonoObject* e)
 			return oOnPress(Instance, element, e);
 		}
         if (!atoi(value.c_str())) {
-			RemoveGameWidget(REMOVE_FPS_OVERLAY);
+			InvalidateFpsWidgets();
             unlink("/system_tmp/fps_enabled");
             
         }
         else {
-			CreateGameWidget(CREATE_FPS_OVERLAY);
+			InvalidateFpsWidgets();
             touch_file("/system_tmp/fps_enabled");
         }
 
-        global_conf.overlay_fps = !global_conf.overlay_fps;
+        global_conf.overlay_fps = atoi(value.c_str()) != 0;
+        P5Event("FPS setting changed", global_conf.overlay_fps);
     }
     else if (id == "id_overlay_ip") {
 		if (atoi(value.c_str()) == global_conf.overlay_ip) {
@@ -1336,8 +1358,7 @@ int OnPress_Hook(MonoObject* Instance, MonoObject* element, MonoObject* e)
 			CreateGameWidget(CREATE_GPU_OVERLAY);
         }
         if (global_conf.overlay_fps) {
-            RemoveGameWidget(REMOVE_FPS_OVERLAY);
-            CreateGameWidget(CREATE_FPS_OVERLAY);
+            InvalidateFpsWidgets();
         }
         if (global_conf.overlay_ip) {
             RemoveGameWidget(REMOVE_IP_OVERLAY);
@@ -1384,38 +1405,15 @@ int OnPress_Hook(MonoObject* Instance, MonoObject* element, MonoObject* e)
             {
                 if (plugin.id == id)
                 {
-                    int pid = -1;
-                    if(plugin.tid.rfind(".elf") != std::string::npos && (pid = sceSystemServiceGetAppId(plugin.tid.c_str())) > 0){
-                        IPC_Client::getInstance(false).ForceKillPID(pid);
-                        notify("killed payload %s", plugin.tid.c_str());
+                    if(plugin.game && port_prx_suffix(plugin.path.c_str())){
+                        auto request=new PrxToggle{plugin.path,plugin.name,atol(value.c_str())!=0};pthread_t thread;
+                        if(!pthread_create(&thread,nullptr,toggle_prx_thread,request))pthread_detach(thread);
+                        else {delete request;notify("Could not start PRX request");}
                         break;
                     }
-                    char pbuf[256];
+                    char pbuf[96];
                     snprintf(pbuf, sizeof(pbuf), "/system_tmp/%s.PID", plugin.tid.c_str());
-
-                    int f = open(pbuf, O_RDONLY);
-                    if (f >= 0)
-                    {
-                        char t[32];
-                        int r = read(f, t, sizeof(t) - 1);
-                        close(f);
-                        if (r > 0)
-                        {
-                            t[r] = 0;
-                            pid = atoi(t);
-                        }
-                    }
-
-                    if (pid > 0)
-                    {
-                        char name[32];
-                        if (sceKernelGetProcessName(pid, name) < 0)
-                        {
-                            shellui_log("Stale plugin PID file detected for %s, removing", plugin.tid.c_str());
-                            unlink(pbuf);
-                            pid = -1;
-                        }
-                    }
+                    int pid = port_plugin_running(plugin.tid.c_str(), sceKernelGetProcessName);
 
                     if (pid > 0 && atol(value.c_str()) == 0)
                     {
@@ -1435,7 +1433,9 @@ int OnPress_Hook(MonoObject* Instance, MonoObject* element, MonoObject* e)
                         pthread_t thr;
                         shellui_log("Plugin %s not running", plugin.tid.c_str());
                         auto plugin_info = new Plugins(plugin);
-                        pthread_create(&thr, nullptr, load_plugin_thread, (void *)plugin_info);
+                        if (pthread_create(&thr, nullptr, load_plugin_thread, (void *)plugin_info) == 0)
+                            pthread_detach(thr);
+                        else { delete plugin_info; notify("Could not start plugin loader"); }
                     }
                 }
             }
@@ -1997,7 +1997,9 @@ int OnPress_Hook(MonoObject* Instance, MonoObject* element, MonoObject* e)
             }
         
             for (auto plugin : plugins_list) {
-                int pid = sceSystemServiceGetAppId(plugin.tid.c_str());
+                if(plugin.game&&port_prx_suffix(plugin.path.c_str())){IPC_Client::getInstance(false).LaunchGamePlugin(plugin.path,false);continue;}
+                // Game-targeted .plugin files run in their own daemon process too.
+                int pid = port_plugin_running(plugin.tid.c_str(), sceKernelGetProcessName);
                 if (pid > 0) {
                     shellui_log("killing pid: 0x%X", pid);
                     IPC_Client::getInstance(false).ForceKillPID(pid);
@@ -2093,6 +2095,7 @@ MonoObject* MemoryStream_Instance = nullptr;
 uint64_t GetManifestResourceStream_Hook(uint64_t inst, MonoString* FileName) {
     
     std::string new_xml_string;
+    P5Count(P5Resources);
     std::string resourceName = Mono_to_String(FileName);
 
 #if SHELL_DEBUG==1 
@@ -2149,6 +2152,7 @@ uint64_t GetManifestResourceStream_Hook(uint64_t inst, MonoString* FileName) {
     }
 
     if (is_debug_settings) {
+        P5Count(P5ToolboxResources);P5Event("Toolbox resource requested");
         LoadSettings();
         new_xml_string = global_conf.lite_mode ? dec_list_xml_str : dec_xml_str;
        // shellui_log("Lite mode is %s", global_conf.lite_mode ? "enabled" : "disabled");
@@ -2324,7 +2328,7 @@ int OnPreCreate_Hook(MonoObject* Instance, MonoObject* element) {
     if (!plugins_list.empty()) {
         for (auto plugin : plugins_list) {
             if (plugin.id == id) {
-                s_MonoText = mono_string_new(Root_Domain, (sceSystemServiceGetAppId(plugin.tid.c_str()) > 0) ? "1" : "0");
+                s_MonoText = mono_string_new(Root_Domain, (plugin.game&&port_prx_suffix(plugin.path.c_str())?if_exists(("/system_tmp/"+plugin.tid+".PRX").c_str()):port_plugin_running(plugin.tid.c_str(), sceKernelGetProcessName)>0) ? "1" : "0");
             }
         }
     }
@@ -2558,9 +2562,10 @@ bool handle_uri_boot_common(MonoString* uri, int opt) {
   template<typename Argument> bool port_boot_dispatch(MonoString* uri, int opt, Argument titleIdForBootAction, bool (*original)(MonoString*,int,Argument)) {
 #ifdef ETAHEN_PORT_1360
     if(uri&&port_toolbox_root_requested(Mono_to_String(uri).c_str())){
+      P5Count(P5RootRequests);P5Event("dashboard Toolbox route entered");
       cheats_shortcut_activated=cheats_shortcut_activated_not_open=false;
       game_shortcut_activated=game_shortcut_activated_media=false;
-      return original(mono_string_new(Root_Domain,ETAHEN_TOOLBOX_URI),opt,titleIdForBootAction);
+      bool accepted=original(mono_string_new(Root_Domain,ETAHEN_TOOLBOX_URI),opt,titleIdForBootAction);P5Count(P5RootReturns);if(!accepted)P5Count(P5RootFailures);P5Event("dashboard Toolbox route returned",accepted);return accepted;
     }
 #endif
     if(handle_uri_boot_common(uri, opt)) {
@@ -2586,9 +2591,10 @@ bool uri_boot_hook_string(MonoString* uri,int opt,MonoString* arg){return port_b
   bool uri_boot_hook_2(MonoString* uri, int opt) {
 #ifdef ETAHEN_PORT_1360
     if(uri&&port_toolbox_root_requested(Mono_to_String(uri).c_str())){
+      P5Count(P5RootRequests);P5Event("dashboard Toolbox route entered");
       cheats_shortcut_activated=cheats_shortcut_activated_not_open=false;
       game_shortcut_activated=game_shortcut_activated_media=false;
-      return boot_orig_2(mono_string_new(Root_Domain,ETAHEN_TOOLBOX_URI),opt);
+      bool accepted=boot_orig_2(mono_string_new(Root_Domain,ETAHEN_TOOLBOX_URI),opt);P5Count(P5RootReturns);if(!accepted)P5Count(P5RootFailures);P5Event("dashboard Toolbox route returned",accepted);return accepted;
     }
 #endif
   #if SHELL_DEBUG==1
@@ -2851,6 +2857,7 @@ bool uri_boot_hook_string(MonoString* uri,int opt,MonoString* arg){return port_b
       }
   
       if (toolbox_sc_activated) {
+        P5Count(P5Shortcuts);P5Event("configured Toolbox shortcut activated");
 #if SHELL_DEBUG == 1
         shellui_log("Toolbox Shortcut Activated");
 #endif
@@ -2966,6 +2973,7 @@ void save_appid(int value, const char* filename) {
 }
 bool app_launched = false;
 int LaunchApp(MonoString* titleId, uint64_t* args, int argsSize, LaunchAppParam *param){
+   if (titleId && Mono_to_String(titleId)=="ETHN13600") P5Event("Toolbox card reached native LaunchApp");
 #if 1
    if(!if_exists("/system_tmp/patch_plugin")) {
       #if SHELL_DEBUG == 1

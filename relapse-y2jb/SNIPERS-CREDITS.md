@@ -18,7 +18,7 @@
   work to John Tornblom, EchoStretch and contributors. Retain component licenses.
 - etaHEN: **LightningMods and etaHEN contributors**, GPLv3, with GronedWaffel's
   unofficial 13.60 r3 port. Matching source/build inputs:
-  https://github.com/GronedWaffel/etahen-13.60/releases/tag/v2.5B-13.60-r3
+  https://github.com/GronedWaffel/etahen-11.00-13.60/releases/tag/v2.5B-13.60-r3
 - ShadowMountPlus: **drakmor and contributors**, GPLv3; matched
   `1.7beta2-snipers1360-r2-y2jb`, packaged inside the guarded supervisor.
   This local revision adds the exact YouTube app-mount wait exemption. Matching

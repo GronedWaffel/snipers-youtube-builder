@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 import {collectorParser} from './protocol.mjs';
 const section=document.createElement('section');section.className='how';section.id='experimental-report';section.style.display='block';
-const title=document.createElement('h2');title.textContent='Help improve experimental etaHEN';
+const title=document.createElement('h2');title.textContent='Help improve etaHEN';
 const description=document.createElement('p');description.textContent='After a failed attempt, restore your jailbreak and ELF loader, then upload from this PS5. We collect startup traces and selected etaHEN component/error logs, including previous attempts. These may include game or plugin paths. No saves, account databases, or arbitrary folders are collected. Reports are private and retained for 30 days.';
-const button=document.createElement('button');button.className='primary';button.textContent='Upload experimental etaHEN log';
+const button=document.createElement('button');button.className='primary';button.textContent='Upload etaHEN log';
 const status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
 section.append(title,description,button,status);(document.querySelector('main')||document.body).append(section);
 const fw=/PlayStation 5\/(\d+\.\d+)/.exec(navigator.userAgent)?.[1];
 if(!fw){button.disabled=true;status.textContent='Open this page on your jailbroken PS5 to collect its logs automatically.';}
 let busy=false,pendingReport=null,completed=false;
 function showReceipt(reply){
- const message='Your diagnostic logs have been received. Thank you for helping improve experimental etaHEN. You can close this page now.';
+ const message='Your diagnostic logs have been received. Thank you for helping improve etaHEN. You can close this page now.';
  status.textContent='Log uploaded successfully. Report ID: '+reply.id+'. '+message;
  status.style.cssText='padding:20px;border:2px solid #63e6a4;border-radius:12px;background:#123629;color:#fff;font-size:20px;overflow-wrap:anywhere';
  button.textContent='Log uploaded successfully';
@@ -29,18 +29,18 @@ function showReceipt(reply){
 }
 button.onclick=async()=>{
  if(busy)return;
- if(!location.pathname.startsWith('/builder/ex/')){location.href='/builder/ex/?diagnostics=1';return;}
+ if(!location.pathname.startsWith('/builder/')){location.href='/builder/?diagnostics=1';return;}
  section.scrollIntoView({block:'center'});
  busy=true;button.disabled=true;const log=text=>{if(!completed)status.textContent=text;};
  let report=pendingReport;
  try{
   if(!report){
   log('Preparing the read-only log collector…');
-  const [metaResponse,runtimeResponse]=await Promise.all([fetch('/diagnostics/collector.json',{cache:'no-store'}),fetch('/builder/ex/api/runtime',{cache:'no-store'})]);
+  const [metaResponse,runtimeResponse]=await Promise.all([fetch('/diagnostics/collector.json',{cache:'no-store'}),fetch('/builder/api/runtime',{cache:'no-store'})]);
   if(!metaResponse.ok||!runtimeResponse.ok)throw Error('Log collector unavailable. Please try again later.');
   const meta=await metaResponse.json(),runtime=await runtimeResponse.json();
   if(meta.url!=='/diagnostics/collector.elf'||!Number.isInteger(meta.bytes)||meta.bytes<64||meta.bytes>1024*1024||!/^[a-f0-9]{64}$/.test(meta.sha256))throw Error('Invalid collector metadata.');
-  const {sha256Hex}=await import('/builder/ex/sha256.js');
+  const {sha256Hex}=await import('/builder/sha256.js');
   const response=await fetch(meta.url,{cache:'no-store'});if(!response.ok)throw Error('Collector download failed.');const bytes=new Uint8Array(await response.arrayBuffer());
   if(bytes.length!==meta.bytes||sha256Hex(bytes)!==meta.sha256)throw Error('Collector checksum failed. Nothing was sent.');
   // The worker resolves offsets relative to the page. Absolute runtime URLs

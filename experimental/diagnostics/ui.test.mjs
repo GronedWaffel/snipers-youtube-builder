@@ -11,7 +11,7 @@ async function page(replies){
   elements.push(el);return el;
  },querySelector(){return document.body;}};
  document.body=document.createElement('body');
- const context=vm.createContext({document,navigator:{userAgent:'PlayStation 5/13.60'},location:{pathname:'/builder/ex/',search:''},URLSearchParams,Uint8Array,console,
+ const context=vm.createContext({document,navigator:{userAgent:'PlayStation 5/13.60'},location:{pathname:'/builder/',search:''},URLSearchParams,Uint8Array,console,
   async fetch(url){
    if(url.endsWith('collector.json'))return {ok:true,json:async()=>({url:'/diagnostics/collector.elf',bytes:64,sha256:'a'.repeat(64)})};
    if(url.endsWith('/runtime'))return {ok:true,json:async()=>({runtime:'/mock-runtime'})};
@@ -21,7 +21,7 @@ async function page(replies){
   }});
  const exports={
   './protocol.mjs':{collectorParser:()=>({line(){},finish:()=>({schema:1,files:[],skipped:[]})})},
-  '/builder/ex/sha256.js':{sha256Hex:()=> 'a'.repeat(64)},
+  '/builder/sha256.js':{sha256Hex:()=> 'a'.repeat(64)},
   '/mock-runtime':{prepare:async()=>({p:{},chain:{}})},
   './transport.js':{sendLocalElf:async()=>{collections++;}},
  };

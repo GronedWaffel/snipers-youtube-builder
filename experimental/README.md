@@ -1,20 +1,14 @@
-# Experimental multi-firmware channel
+# Unified builder implementation
 
-This channel targets 33 exact firmware versions from 7.00 through 13.60. **9.05 and 11.40 are excluded**: no matching public Relapse tables were found. Adjacent firmware offsets are never substituted.
+The historical `experimental` directory now supplies the main builder and payload library. The 14 exact profiles cover 11.00 through 13.60, excluding 11.40; firmware below 11.00 is not offered. Older offset tables remain as source history.
 
-Use [the experimental builder](https://sniperscheats.lol/builder/ex/). The [stable 13.60 builder](https://sniperscheats.lol/builder/) and stable releases remain separate.
+The release uses the unchanged, tested Unified r1 etaHEN ELF. See `../etahen-13.60/RELEASE-NOTES-unified-r1.md` for features, hardware observations and limitations. Local image/installer checks establish build and file integrity, not console compatibility. Existing installations must be rebuilt to receive this update.
 
-Every target passed a local build of the native startup loader, complete verified UFS2 image, and personalized installer. All eight hosted payloads also passed image integration at 7.00 and 13.60. These are build and file-integrity checks, **not console validation**. The experimental etaHEN binary has no claimed hardware validation; the original stable 13.60 ten-run result does not transfer to this build.
-
-Installation requires an existing jailbreak and etaHEN. Choose the console's exact firmware. YouTube PPSA01650 01.000.003 is used below 12.60; 01.000.030 is used at 12.60 and later. The installer verifies package bytes and installed metadata, checks firmware before changing files, and recovers from a missing DPI reply by observing installation completion. Never load standalone etaHEN and the bundled startup in the same boot.
-
-etaHEN uses a separate experimental configuration and startup receipts. Profiles combine pinned public Relapse, SDK and kstuff tables; the embedded kstuff v1.11 release was checked independently. Mono Boot ABI checks reject an unknown signature before hook publication. Toolbox behavior and optional upstream payload compatibility still need community testing on each firmware. Experimental r5 enables the Toolbox dashboard card helper on every exact supported profile, uses the legacy Toolbox route from 11.00 onward, and includes card registration results in uploaded diagnostics. Lower-firmware card installation and opening still require community testing; r4 Toolbox initialization was confirmed in three 11.20 report runs.
+Installation requires an existing jailbreak and etaHEN. Select the exact firmware. YouTube PPSA01650 01.000.003 is used below 12.60 and 01.000.030 at 12.60 and later. The installer checks firmware, verifies package/image bytes, and reconciles a missing DPI response against installation completion. Do not load standalone etaHEN and the bundled startup in the same boot.
 
 ## Rebuilding
 
-Keep the three sibling source directories. Provision Node 24, Zig 0.14.1, PS5 Payload SDK 0.43, .NET SDK 9, and the external inputs listed in `../etahen-13.60/BUILDING.md`. Set `ZIG` and `PS5_PAYLOAD_SDK`. Restore the exact Y2JB files named in `../relapse-y2jb/third_party/y2jb-host/SOURCE.json`, including its excluded compiled inputs. Initialize the pinned kernel with `git submodule update --init` (or the bundled kernel Git archive described in the root build guide).
-
-From the repository root:
+Keep the sibling source directories. Provide Node 24, Zig 0.14.1, PS5 Payload SDK 0.43, .NET SDK 9 or later and the external inputs in `../etahen-13.60/BUILDING.md`. Set `ZIG`, `PS5_PAYLOAD_SDK`, `DOTNET` and optionally `SNIPERS_UFS_DLL`. Restore the pinned Y2JB inputs described by `../relapse-y2jb/third_party/y2jb-host/SOURCE.json` and the kernel Git bundle described in the root source archive.
 
 ```text
 node experimental/generate-profiles.mjs
@@ -24,23 +18,15 @@ node experimental/refresh-catalog.mjs
 node experimental/build-native.mjs
 dotnet build relapse-y2jb/tools/ufs2/ImageBuilder.csproj -c Release
 node experimental/verify-integration.mjs
-node experimental/verify-integration.mjs --all-payloads 7.00 13.60
+node experimental/verify-integration.mjs --all-payloads 11.00 13.60
 ```
 
-The local verifier sets a Windows SDK fallback when environment variables are absent; other platforms must supply their own paths. `SNIPERS_UFS_DLL` can point to the prebuilt ImageBuilder.dll. `DOTNET` selects a nonstandard dotnet executable. Native build outputs and Sony packages are not source-release contents. Pinned source dependencies and their licenses retain the original authors' credits.
+## Hosting and migration
 
-## Hosting
+The unified service binds loopback port 8791, with independent storage, a 100-session capacity, two build workers and 20-minute expiry. Preserve legacy services and download routes while their sessions drain. `/builder/ex` and `/payloads/ex` pages redirect to the normal pages; existing job and payload URLs must remain readable. The native installer downloads packages and bundle bytes over the explicitly configured HTTP routes. Deployment examples live in `deploy/`.
 
-`deploy/` contains isolated service and nginx examples. Use a separate storage directory, service user and port 8789. Supply immutable SDK, Zig, .NET and UFS paths, plus writable compiler caches under the service's data directory. Serve both pinned YouTube packages from the separate `youtube-packages` alias over HTTP as well as HTTPS. Validate local builds before setting `SNIPERS_BUILDS=1` and `SNIPERS_INSTALL_ENABLED=1`. The release manifest records per-firmware promotion; missing candidates stay disabled.
+PS Neighborhood and GTA V publish normal releases with the same firmware list. Neighborhood's firmware-sensitive package/patch/save operations retain their 13.60 restrictions; GTA retains game fingerprint, Story Mode and compare-before-write checks.
 
-Build sessions expire after 20 minutes. Experimental defaults are 20 sessions and one worker. The stable service's queue and files are independent. Public downloads are addressed through checked routes, never a directory listing of job storage.
+## Diagnostics and credits
 
-## Related program releases
-
-PS Neighborhood and GTA V publish separate experimental releases using the same exact firmware list. PS Neighborhood keeps native package installation, patch removal, decrypted-save operations and ShadowMount batch registration restricted to 13.60. GTA retains game-build fingerprint, Story Mode, compare-before-write and rollback checks. Protocol compatibility and successful compilation do not establish hardware compatibility.
-
-See the root `CREDITS.md`, `LICENSES.md`, pinned research in `upstream/`, and `integration-results.json` for provenance and recorded checks.
-
-## Community diagnostic reports
-
-Experimental etaHEN now records persistent startup diagnostics. After recovery, use **Upload experimental etaHEN log** on either builder (or `/build`) from the jailbroken PS5. The button runs a read-only collector and sends the selected logs over HTTPS to private server storage. Reports receive a reference ID. See [diagnostic details](diagnostics/README.md) for coverage, retention, privacy, limits, and operator access. Download a fresh experimental ELF or rebuild your YouTube bundle to receive the logger; existing installed bundles do not change automatically.
+Use **Upload etaHEN log** on the builder from a jailbroken PS5. The collector submits startup logs to private server storage and displays a receipt. Existing configuration and diagnostic paths are retained for compatibility. See `diagnostics/README.md` for collection details. Component credits and licenses remain in the root `CREDITS.md`, `LICENSES.md` and pinned `upstream/` research.

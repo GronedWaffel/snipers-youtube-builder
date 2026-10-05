@@ -1,25 +1,6 @@
 {
-  "channel": "experimental",
+  "channel": "unified",
   "firmwares": [
-    "7.00",
-    "7.01",
-    "7.20",
-    "7.40",
-    "7.60",
-    "7.61",
-    "8.00",
-    "8.20",
-    "8.40",
-    "8.60",
-    "9.00",
-    "9.20",
-    "9.40",
-    "9.60",
-    "10.00",
-    "10.01",
-    "10.20",
-    "10.40",
-    "10.60",
     "11.00",
     "11.20",
     "11.60",
@@ -36,20 +17,19 @@
     "13.60"
   ],
   "excluded": {
-    "9.05": "No public Relapse table found",
-    "11.40": "No public Relapse table found"
+    "11.40": "No matching public Relapse table; unsupported"
   },
   "records": [
     {
       "id": "etahen",
-      "name": "etaHEN experimental",
-      "version": "2.5B · multi-firmware candidate",
-      "bytes": 30521128,
-      "sha256": "49167e8a63a7a6ec832ef560a594a1143d4bfef25f43259ebef4912690cd7395",
-      "url": "/payloads/ex/etahen-49167e8a63a7.elf",
+      "name": "etaHEN Unified",
+      "version": "2.5B Unified r1",
+      "bytes": 36746616,
+      "sha256": "46c161473b27d12f1fa5e2d1d10466ce587db841ed9e8d71a219424d8fcf637f",
+      "url": "/payloads/etahen-46c161473b27.elf",
       "author": "LightningMods and etaHEN contributors; GronedWaffel integration",
       "completion": false,
-      "source": "https://github.com/GronedWaffel/etahen-13.60/releases/tag/v2.5B-multifw-experimental.5"
+      "source": "https://github.com/GronedWaffel/etahen-11.00-13.60/releases/tag/v2.5B-unified.1"
     },
     {
       "id": "nanodns",
@@ -57,21 +37,21 @@
       "version": "0.4",
       "bytes": 357680,
       "sha256": "a4efc2a9f478eec2563d14a9bd649e6a195da2fe8b4a0b472ab81ed32fbb3d34",
-      "url": "/payloads/ex/nanodns-a4efc2a9f478.elf",
+      "url": "/payloads/nanodns-a4efc2a9f478.elf",
       "author": "drakmor and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     },
     {
       "id": "shadowmount",
       "name": "ShadowMountPlus",
-      "version": "1.7beta2 - experimental supervisor",
+      "version": "1.7beta2 - unified supervisor",
       "bytes": 2661088,
       "sha256": "a398c22e6ebe472ad69b746e03f9b673a4fc65c36871e54628990b1ab8452937",
-      "url": "/payloads/ex/shadowmount-a398c22e6ebe.elf",
+      "url": "/payloads/shadowmount-a398c22e6ebe.elf",
       "author": "drakmor and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     },
     {
       "id": "filemanager",
@@ -79,10 +59,10 @@
       "version": "1.9",
       "bytes": 568656,
       "sha256": "9398d1a7f116ba07cbee1c1f372d68ce91af773c6aa8d1d2ede569f288c81632",
-      "url": "/payloads/ex/filemanager-9398d1a7f116.elf",
+      "url": "/payloads/filemanager-9398d1a7f116.elf",
       "author": "owendswang and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     },
     {
       "id": "websrv",
@@ -90,10 +70,10 @@
       "version": "0.34",
       "bytes": 1821096,
       "sha256": "325606c13b95b5aaf97e9962c596e3baac4007d5dc7f0801617726b4d2dce59f",
-      "url": "/payloads/ex/websrv-325606c13b95.elf",
+      "url": "/payloads/websrv-325606c13b95.elf",
       "author": "John Tornblom and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     },
     {
       "id": "ftp",
@@ -101,10 +81,10 @@
       "version": "0.21.1",
       "bytes": 415040,
       "sha256": "64fac64521270fc34cf566b2807f31632d930a2021829260293745150a0be1ad",
-      "url": "/payloads/ex/ftp-64fac6452127.elf",
+      "url": "/payloads/ftp-64fac6452127.elf",
       "author": "John Tornblom and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     },
     {
       "id": "debug",
@@ -112,10 +92,10 @@
       "version": "1.3.2",
       "bytes": 4284256,
       "sha256": "beceb021d83a4e13406516563dca4fcccd5e81608411a03ef200280dab405eef",
-      "url": "/payloads/ex/debug-beceb021d83a.elf",
+      "url": "/payloads/debug-beceb021d83a.elf",
       "author": "Pharaoh2k / OSR, CTN, SiSTR0 and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     },
     {
       "id": "payloadmanager",
@@ -123,10 +103,10 @@
       "version": "0.5.2",
       "bytes": 2640344,
       "sha256": "692f90d86411c0a3e36b25261079a943daf6c687a8036c979a7e7f1593f7fb16",
-      "url": "/payloads/ex/payloadmanager-692f90d86411.elf",
+      "url": "/payloads/payloadmanager-692f90d86411.elf",
       "author": "itsPLK and contributors",
       "completion": "optional",
-      "source": "/builder/ex/credits"
+      "source": "/builder/credits"
     }
   ]
 }

@@ -29,13 +29,13 @@ async function loadFirmware(){
   try{const response=await api('/api/catalog?firmware='+encodeURIComponent($('firmware').value));
    catalog=response.payloads;recommended=response.recommended;custom.clear();selected=catalog.filter(x=>recommended.includes(x.id));available=response.buildAvailable;
    $('youtube-version').textContent='YouTube '+response.youtubeVersion;
-   $('connection').textContent='EXPERIMENTAL';
-   $('availability').textContent=available?'Community test build available for '+response.firmware+'. Hardware validation is still needed.':'Experimental '+response.firmware+' builds are being prepared. The stable builder remains available.';
+   $('connection').textContent='ONLINE';
+   $('availability').textContent=available?'Build available for '+response.firmware+'.':'Firmware '+response.firmware+' builds are being prepared. Please try again later.';
   }catch(e){$('availability').textContent=e.message;}finally{busy=false;render();}
 }
 $('firmware').onchange=()=>void loadFirmware();
 try{const data=await api('/api/firmwares');$('firmware').replaceChildren();
- for(const item of data.firmwares){const option=node('option',item.firmware+' — experimental');option.value=item.firmware;$('firmware').append(option);}
+ for(const item of data.firmwares){const option=node('option',item.firmware);option.value=item.firmware;$('firmware').append(option);}
  for(const [firmware,reason] of Object.entries(data.excluded)){const option=node('option',firmware+' — missing Relapse offsets');option.disabled=true;option.title=reason;$('firmware').append(option);}
  const detected=/PlayStation 5\/(\d+\.\d+)/.exec(navigator.userAgent)?.[1];
  if(data.firmwares.some(x=>x.firmware===detected))$('firmware').value=detected;

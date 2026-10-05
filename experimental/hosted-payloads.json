@@ -1,13 +1,13 @@
 [
   {
     "id": "etahen",
-    "label": "etaHEN experimental",
-    "version": "2.5B · multi-firmware candidate",
-    "bytes": 30521128,
-    "sha256": "49167e8a63a7a6ec832ef560a594a1143d4bfef25f43259ebef4912690cd7395",
-    "input": "etahen-13.60/build/releases/etaHEN-49167e8a63a7a6ec832ef560a594a1143d4bfef25f43259ebef4912690cd7395.elf",
+    "label": "etaHEN Unified",
+    "version": "2.5B Unified r1",
+    "bytes": 36746616,
+    "sha256": "46c161473b27d12f1fa5e2d1d10466ce587db841ed9e8d71a219424d8fcf637f",
+    "input": "etahen-13.60/build/releases/etaHEN-46c161473b27d12f1fa5e2d1d10466ce587db841ed9e8d71a219424d8fcf637f.elf",
     "acknowledgement": "etahen",
-    "description": "Community test build with exact firmware profiles. Hardware behavior is not yet validated on these versions."
+    "description": "Unified 11.00–13.60 release with controller fix, Toolbox card, plugins and PS4/PS5 FPS display."
   },
   {
     "id": "nanodns",
@@ -22,12 +22,12 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   },
   {
     "id": "shadowmount",
     "label": "ShadowMountPlus",
-    "version": "1.7beta2 - experimental supervisor",
+    "version": "1.7beta2 - unified supervisor",
     "bytes": 2661088,
     "sha256": "a398c22e6ebe472ad69b746e03f9b673a4fc65c36871e54628990b1ab8452937",
     "upstreamSha256": "3f716a7b2220c7e87e87452ae05cad689ef842d3beb4cdad6c526cb6dfc2b6b5",
@@ -37,7 +37,7 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   },
   {
     "id": "filemanager",
@@ -52,7 +52,7 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   },
   {
     "id": "websrv",
@@ -67,7 +67,7 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   },
   {
     "id": "ftp",
@@ -82,7 +82,7 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   },
   {
     "id": "debug",
@@ -97,7 +97,7 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   },
   {
     "id": "payloadmanager",
@@ -112,6 +112,6 @@
     "requires": [
       "etahen"
     ],
-    "description": "Experimental startup supervisor. Upstream payload compatibility varies by firmware; community testing is pending."
+    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
   }
 ]

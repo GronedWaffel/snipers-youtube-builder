@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 import fs from 'node:fs';
-export const CHANNEL='experimental', BASE_PATH='/builder/ex';
+export const CHANNEL='unified', BASE_PATH='/builder';
 export const profiles=JSON.parse(fs.readFileSync(new URL('./firmware-profiles.json',import.meta.url)));
 export function firmwareProfile(firmware){
  if(typeof firmware!=='string')throw Error('Choose your exact PS5 firmware.');
  const profile=profiles.firmwares.find(p=>p.firmware===firmware);
- if(!profile)throw Error(profiles.excluded[firmware]||'This firmware has no experimental profile.');
+ if(!profile)throw Error(profiles.excluded[firmware]||'This firmware has no supported profile.');
  return profile;
 }
 // Promotion is explicit and per firmware. Table coverage alone never enables installation.

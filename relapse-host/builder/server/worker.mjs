@@ -28,7 +28,7 @@ export function createImageWorker({address,host,port=80,verifyOnly=true}){
   for await(const chunk of createReadStream(imagePath))hash.update(chunk);
   const imageHash=hash.digest('hex');
   const template=await fs.readFile(path.join(workspace,'relapse-host/artifacts/youtube-installer/'+firmware+'/Snipers-YouTube-Installer.template.elf'));
-  const configured=configureInstaller(template,{address,host,port,path:'/builder/ex/youtube-bundles/'+downloadToken+'.dat',job:downloadToken.slice(0,32),bytes:image.size,sha256:imageHash,verifyOnly});
+  const configured=configureInstaller(template,{address,host,port,path:'/builder/youtube-bundles/'+downloadToken+'.dat',job:downloadToken.slice(0,32),bytes:image.size,sha256:imageHash,verifyOnly});
   const installer=path.join(directory,'Snipers-YouTube-Installer.elf');await fs.writeFile(installer,configured.bytes,{flag:'wx'});
   return{path:installer,sha256:configured.sha256,imagePath,imageSha256:imageHash,verifyOnly};
  };

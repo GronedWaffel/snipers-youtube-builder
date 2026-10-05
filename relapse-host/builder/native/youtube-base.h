@@ -24,7 +24,7 @@ static int submit_youtube_dpi(void){
  // The latch is made before sending: an uncertain response must never resubmit.
  int latch=open("/system_tmp/snipers-youtube-ex-package-request",O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW,0600);
  if(latch<0){int prior=errno==EEXIST;close(sock);return prior?1:-3;}close(latch);
- const char *body="url=http%3A%2F%2Fsniperscheats.lol%2Fbuilder%2Fex%2Fyoutube-packages%2FYouTube-PPSA01650-" SNIPERS_YOUTUBE_VERSION ".pkg&content_name=YouTube";
+ const char *body="url=http%3A%2F%2Fsniperscheats.lol%2Fbuilder%2Fyoutube-packages%2FYouTube-PPSA01650-" SNIPERS_YOUTUBE_VERSION ".pkg&content_name=YouTube";
  char request[1024];int n=snprintf(request,sizeof request,"POST /upload HTTP/1.1\r\nHost: 127.0.0.1:12800\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: %zu\r\nConnection: close\r\n\r\n%s",strlen(body),body);
  if(n<=0||n>=(int)sizeof request||exact_write(sock,request,(size_t)n)){close(sock);return -2;}
  char response[8192];size_t used=0;

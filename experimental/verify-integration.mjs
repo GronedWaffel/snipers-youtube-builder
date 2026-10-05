@@ -19,10 +19,10 @@ for(const firmware of targets){
   const downloadToken=createHash('sha256').update(directory).digest('hex').slice(0,48);
   const output=await createImageWorker({address:'127.0.0.1',host:'localhost',verifyOnly:true})({firmware,directory,downloadToken,payloads:validateSelection(allPayloads?HOSTED.map(x=>x.id):['etahen','shadowmount','debug']),progress:message=>console.log(firmware+': '+message)});
   const manifest=JSON.parse(await fs.readFile(path.join(directory,'image/build-manifest.json'),'utf8'));
-  if(manifest.firmware!==firmware||manifest.channel!=='experimental')throw Error('Image target mismatch');
+  if(manifest.firmware!==firmware||manifest.channel!=='unified')throw Error('Image target mismatch');
   results.push({firmware,imageSha256:output.imageSha256,installerSha256:output.sha256,directory,consoleTested:false});
   console.log(firmware+': full image and personalized installer passed');
-  if(!['7.00','12.40','12.60','13.60'].includes(firmware)){
+  if(!['11.00','12.40','12.60','13.60'].includes(firmware)){
     if(path.dirname(path.resolve(directory))!==path.resolve(base))throw Error('Unexpected verification output path');
     await fs.rm(directory,{recursive:true});
   }
