@@ -23,7 +23,7 @@ node experimental/verify-integration.mjs --all-payloads 11.00 13.60
 
 ## Hosting and migration
 
-The unified service binds loopback port 8791, with independent storage, a 100-session capacity, two build workers and 20-minute expiry. Preserve legacy services and download routes while their sessions drain. `/builder/ex` and `/payloads/ex` pages redirect to the normal pages; existing job and payload URLs must remain readable. The native installer downloads packages and bundle bytes over the explicitly configured HTTP routes. Deployment examples live in `deploy/`.
+The unified service binds loopback port 8792, with independent storage, a 100-session capacity, two build workers and 20-minute expiry. Preserve legacy services and download routes while their sessions drain. `/builder/ex` and `/payloads/ex` pages redirect to the normal pages; existing job and payload URLs must remain readable. The native installer downloads packages and bundle bytes over the explicitly configured HTTP routes. Deployment examples live in `deploy/`.
 
 PS Neighborhood and GTA V publish normal releases with the same firmware list. Neighborhood's firmware-sensitive package/patch/save operations retain their 13.60 restrictions; GTA retains game fingerprint, Story Mode and compare-before-write checks.
 
