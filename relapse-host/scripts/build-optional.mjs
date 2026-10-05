@@ -28,7 +28,7 @@ for(const [source,name,extra] of [['optional/vendor/libelfldr/elfldr.c','elfldr'
 }
 const inputs=[
  {id:'nanodns',label:'NanoDNS',version:'0.4',input:path.join(root,'vendor/nanodns.elf'),sha256:'fcfb7d47c3b295560ea1603dc015f7c4950353ef0faca16428bd425680ef1fc5',source:'https://github.com/drakmor/nanoDNS/releases/tag/0.4'},
- {id:'shadowmount',label:'ShadowMountPlus',version:'1.7beta2 experimental supervisor',input:path.join(root,'vendor/shadowmountplus-1.7beta2.elf'),sha256:'3f716a7b2220c7e87e87452ae05cad689ef842d3beb4cdad6c526cb6dfc2b6b5',source:'https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta2'},
+ {id:'shadowmount',label:'ShadowMountPlus',version:'1.7beta4 - unified supervisor',input:path.join(root,'vendor/shadowmountplus-1.7beta4.elf'),sha256:'fc4e5f715e76660ce34bde2adb10eaf1d069cb2cdf06f7a380896dfb62bd0c4a',source:'https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta4'},
  {id:'filemanager',label:'Web File Manager',version:'1.9',input:path.join(root,'vendor/filemanager.elf'),sha256:'711cb076e887fcd55d973ade8b84bb6c22720be295bfde18e32761f6e0479a3e',source:'https://github.com/owendswang/ps5-web-file-manager/releases/tag/v1.9'},
  {id:'websrv',label:'Homebrew web server',version:'0.34',input:path.join(root,'vendor/websrv.elf'),sha256:'54730c867c6e1148536fdcb370e63a7762d989ea87b62488ad4caff64d43f263',source:'https://github.com/ps5-payload-dev/websrv/releases/tag/v0.34'},
  {id:'ftp',label:'ftpsrv',version:'0.21.1',input:path.join(root,'vendor/ftp.elf'),sha256:'7d4b31c83eae4e056580482a3a074e1db25922efc74ac1e439473b45d71a5938',source:'https://github.com/ps5-payload-dev/ftpsrv/releases/tag/v0.21.1'},

@@ -45,10 +45,10 @@
     {
       "id": "shadowmount",
       "name": "ShadowMountPlus",
-      "version": "1.7beta2 - unified supervisor",
-      "bytes": 2661088,
-      "sha256": "a398c22e6ebe472ad69b746e03f9b673a4fc65c36871e54628990b1ab8452937",
-      "url": "/payloads/shadowmount-a398c22e6ebe.elf",
+      "version": "1.7beta4 - unified supervisor",
+      "bytes": 2698880,
+      "sha256": "9a8ebf680d5552b91b3e02aced38948a82d4119614429c14a6ada013d0d02847",
+      "url": "/payloads/shadowmount-9a8ebf680d55.elf",
       "author": "drakmor and contributors",
       "completion": "optional",
       "source": "/builder/credits"

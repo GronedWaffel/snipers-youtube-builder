@@ -7,7 +7,7 @@
     "sha256": "46c161473b27d12f1fa5e2d1d10466ce587db841ed9e8d71a219424d8fcf637f",
     "input": "etahen-13.60/build/releases/etaHEN-46c161473b27d12f1fa5e2d1d10466ce587db841ed9e8d71a219424d8fcf637f.elf",
     "acknowledgement": "etahen",
-    "description": "Unified 11.00–13.60 release with controller fix, Toolbox card, plugins and PS4/PS5 FPS display."
+    "description": "Unified 11.00\u201313.60 release with controller fix, Toolbox card, plugins and PS4/PS5 FPS display."
   },
   {
     "id": "nanodns",
@@ -27,17 +27,17 @@
   {
     "id": "shadowmount",
     "label": "ShadowMountPlus",
-    "version": "1.7beta2 - unified supervisor",
-    "bytes": 2661088,
-    "sha256": "a398c22e6ebe472ad69b746e03f9b673a4fc65c36871e54628990b1ab8452937",
-    "upstreamSha256": "3f716a7b2220c7e87e87452ae05cad689ef842d3beb4cdad6c526cb6dfc2b6b5",
-    "source": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta2",
-    "input": "relapse-host/site/payloads/optional-shadowmount-a398c22e6ebe.elf",
+    "version": "1.7beta4 - unified supervisor",
+    "bytes": 2698880,
+    "sha256": "9a8ebf680d5552b91b3e02aced38948a82d4119614429c14a6ada013d0d02847",
+    "upstreamSha256": "fc4e5f715e76660ce34bde2adb10eaf1d069cb2cdf06f7a380896dfb62bd0c4a",
+    "source": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta4",
+    "input": "relapse-host/site/payloads/optional-shadowmount-9a8ebf680d55.elf",
     "acknowledgement": "supervisor",
     "requires": [
       "etahen"
     ],
-    "description": "Startup supervisor for unified etaHEN. Upstream payload compatibility varies by firmware; check the upstream payload firmware support."
+    "description": "ShadowMountPlus 1.7beta4 with the etaHEN startup supervisor. Owner-tested on 13.60; other firmware compatibility follows upstream."
   },
   {
     "id": "filemanager",

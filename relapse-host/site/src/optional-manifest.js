@@ -11,16 +11,6 @@ export const OPTIONAL_PAYLOADS = [
     "source": "https://github.com/drakmor/nanoDNS/releases/tag/0.4"
   },
   {
-    "id": "shadowmount",
-    "label": "ShadowMountPlus",
-    "version": "1.7beta2 - experimental supervisor",
-    "path": "payloads/optional-shadowmount-a398c22e6ebe.elf",
-    "bytes": 2661088,
-    "sha256": "a398c22e6ebe472ad69b746e03f9b673a4fc65c36871e54628990b1ab8452937",
-    "upstreamSha256": "3f716a7b2220c7e87e87452ae05cad689ef842d3beb4cdad6c526cb6dfc2b6b5",
-    "source": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta2"
-  },
-  {
     "id": "filemanager",
     "label": "Web File Manager",
     "version": "1.9",
@@ -69,5 +59,15 @@ export const OPTIONAL_PAYLOADS = [
     "sha256": "692f90d86411c0a3e36b25261079a943daf6c687a8036c979a7e7f1593f7fb16",
     "upstreamSha256": "62b3ba2a4937c2afc502f9a4e7242cca538610ebb4ae2800c7c6f72e7f268e7c",
     "source": "https://github.com/itsPLK/ps5-payload-manager/releases/tag/v0.5.2"
+  },
+  {
+    "id": "shadowmount",
+    "label": "ShadowMountPlus",
+    "version": "1.7beta4 - unified supervisor",
+    "path": "payloads/optional-shadowmount-9a8ebf680d55.elf",
+    "bytes": 2698880,
+    "sha256": "9a8ebf680d5552b91b3e02aced38948a82d4119614429c14a6ada013d0d02847",
+    "upstreamSha256": "fc4e5f715e76660ce34bde2adb10eaf1d069cb2cdf06f7a380896dfb62bd0c4a",
+    "source": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta4"
   }
 ];
